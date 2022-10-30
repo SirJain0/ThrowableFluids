@@ -1,6 +1,7 @@
 package sirjain.throwable_fluids.main;
 
 import net.fabricmc.api.ModInitializer;
+import sirjain.throwable_fluids.entity.other.ModEntityTypes;
 import sirjain.throwable_fluids.items.ModItems;
 
 public class ThrowableFluids implements ModInitializer {
@@ -10,6 +11,9 @@ public class ThrowableFluids implements ModInitializer {
 	public void onInitialize() {
 		ModItems.registerModItems();
 		ModItems.registerMobSpawnEggItems();
+		ModEntityTypes.registerEntityRender();
+		ModEntityTypes.registerAttributes();
+
 		System.out.println("Hi, "+MOD_ID+"!");
 	}
 }
