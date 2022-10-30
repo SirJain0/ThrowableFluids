@@ -8,7 +8,11 @@ import sirjain.throwable_fluids.main.ThrowableFluids;
 
 public class SplasherRenderer extends MobEntityRenderer<SplasherEntity, SplasherModel> {
     public SplasherRenderer(EntityRendererFactory.Context context) {
-        super(context, new SplasherModel(context.getPart(ModEntityTypes.SPLASHER_LAYER)), 0.5f);
+        super(
+                context,
+                new SplasherModel(context.getPart(ModEntityTypes.SPLASHER_LAYER)),
+                0.5f
+        );
     }
 
     @Override
