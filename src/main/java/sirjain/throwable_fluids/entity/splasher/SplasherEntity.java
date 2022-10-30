@@ -27,10 +27,10 @@ public class SplasherEntity extends FishEntity {
     }
 
     public void initFleeGoals() {
-        this.goalSelector.add(1, new FleeEntityGoal<>(this, GuardianEntity.class, 9.0F, 1.0, 1.2));
-        this.goalSelector.add(1, new FleeEntityGoal<>(this, ElderGuardianEntity.class, 9.0F, 1.0, 1.2));
-        this.goalSelector.add(1, new FleeEntityGoal<>(this, PlayerEntity.class, 9.0F, 1.0, 1.2));
-        this.goalSelector.add(1, new FleeEntityGoal<>(this, DrownedEntity.class, 9.0F, 1.0, 1.2));
+        this.goalSelector.add(1, new FleeEntityGoal<>(this, GuardianEntity.class, 9.0F, 1.4, 1.4));
+        this.goalSelector.add(1, new FleeEntityGoal<>(this, ElderGuardianEntity.class, 9.0F, 1.4, 1.4));
+        this.goalSelector.add(1, new FleeEntityGoal<>(this, PlayerEntity.class, 9.0F, 1.4, 1.4));
+        this.goalSelector.add(1, new FleeEntityGoal<>(this, DrownedEntity.class, 9.0F, 1.4, 1.4));
     }
 
     @Override
