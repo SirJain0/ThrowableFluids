@@ -1,16 +1,20 @@
 package sirjain.throwable_fluids.items;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import sirjain.throwable_fluids.entity.other.ModEntityTypes;
 import sirjain.throwable_fluids.main.ThrowableFluids;
 
 public class ModItems {
+    public static Item MORBID_FLESH;
+
     public static void registerModItems() {
-        // Register here
+        MORBID_FLESH = Registry.register(
+                Registry.ITEM,
+                new Identifier(ThrowableFluids.MOD_ID, "morbid_flesh"),
+                new Item(new Item.Settings().food(ModFoodComponents.MORBID_FLESH).group(ItemGroup.FOOD))
+        );
     }
 
     public static void registerMobSpawnEggItems() {
