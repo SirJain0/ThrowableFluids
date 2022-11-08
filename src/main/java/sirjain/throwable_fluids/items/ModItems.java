@@ -8,12 +8,19 @@ import sirjain.throwable_fluids.main.ThrowableFluids;
 
 public class ModItems {
     public static Item MORBID_FLESH;
+    public static Item MORBID_ESSENCE;
 
     public static void registerModItems() {
         MORBID_FLESH = Registry.register(
                 Registry.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "morbid_flesh"),
                 new Item(new Item.Settings().food(ModFoodComponents.MORBID_FLESH).group(ItemGroup.FOOD))
+        );
+
+        MORBID_ESSENCE = Registry.register(
+                Registry.ITEM,
+                new Identifier(ThrowableFluids.MOD_ID, "morbid_essence"),
+                new Item(new Item.Settings().group(ItemGroup.MISC).fireproof())
         );
     }
 
