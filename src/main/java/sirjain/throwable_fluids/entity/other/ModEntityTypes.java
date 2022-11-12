@@ -30,7 +30,7 @@ public class ModEntityTypes {
     public static final EntityType<GlowWormEntity> GLOW_WORM_ENTITY = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(ThrowableFluids.MOD_ID, "glow_worm"),
-            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, GlowWormEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, GlowWormEntity::new).fireImmune().dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
     );
 
     public static void registerAttributes() {
