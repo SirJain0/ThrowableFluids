@@ -23,7 +23,7 @@ public class ModEntityTypes {
     public static final EntityType<SplasherEntity> SPLASHER_ENTITY = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(ThrowableFluids.MOD_ID, "splasher"),
-            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, SplasherEntity::new).dimensions(EntityDimensions.fixed(1.25f, 2f)).build()
+            FabricEntityTypeBuilder.create(SpawnGroup.WATER_CREATURE, SplasherEntity::new).dimensions(EntityDimensions.fixed(1.25f, 2f)).build()
     );
 
     public static final EntityModelLayer GLOW_WORM_LAYER = new EntityModelLayer(new Identifier(ThrowableFluids.MOD_ID, "glow_worm"), "root");

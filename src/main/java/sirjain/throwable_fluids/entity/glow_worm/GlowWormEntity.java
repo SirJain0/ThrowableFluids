@@ -8,14 +8,17 @@ import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.data.TrackedData;
-import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
-public class GlowWormEntity extends PathAwareEntity {
+public class GlowWormEntity extends AnimalEntity {
     public static TrackedData<Byte> COLOR;
 
-    public GlowWormEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
+    public GlowWormEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -39,6 +42,12 @@ public class GlowWormEntity extends PathAwareEntity {
         }
     }
 
+    @Nullable
+    @Override
+    public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
+        return null;
+    }
+
     @Override
     public void tickMovement() {
         this.world.addParticle(
@@ -55,7 +64,7 @@ public class GlowWormEntity extends PathAwareEntity {
     }
 
     public static DefaultAttributeContainer.Builder createGlowWormAttributes() {
-        return PathAwareEntity
+        return AnimalEntity
                 .createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 5)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D);
