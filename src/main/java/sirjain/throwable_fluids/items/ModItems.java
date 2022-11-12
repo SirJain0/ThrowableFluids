@@ -8,7 +8,7 @@ import sirjain.throwable_fluids.main.ThrowableFluids;
 
 public class ModItems {
     public static Item MORBID_FLESH;
-    public static Item MORBID_ESSENCE;
+    public static Item WORM_CREAM;
     public static Item GLOW_WORM_SPAWN_EGG;
     public static Item SPLASHER_SPAWN_EGG;
 
@@ -19,9 +19,9 @@ public class ModItems {
                 new Item(new Item.Settings().food(ModFoodComponents.MORBID_FLESH).group(ItemGroup.FOOD))
         );
 
-        MORBID_ESSENCE = Registry.register(
+        WORM_CREAM = Registry.register(
                 Registry.ITEM,
-                new Identifier(ThrowableFluids.MOD_ID, "morbid_essence"),
+                new Identifier(ThrowableFluids.MOD_ID, "worm_cream"),
                 new Item(new Item.Settings().group(ItemGroup.MISC).fireproof())
         );
     }
