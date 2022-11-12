@@ -36,7 +36,7 @@ public class ModItems {
         GLOW_WORM_SPAWN_EGG = Registry.register(
                 Registry.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "glow_worm_spawn_egg"),
-                new SpawnEggItem(ModEntityTypes.GLOW_WORM_ENTITY, 0xa73b3f, 0xbf6641, new Item.Settings().group(ItemGroup.MISC))
+                new SpawnEggItem(ModEntityTypes.GLOW_WORM_ENTITY, 0xa73b3f, 0xff7c1b, new Item.Settings().group(ItemGroup.MISC))
         );
     }
 }
