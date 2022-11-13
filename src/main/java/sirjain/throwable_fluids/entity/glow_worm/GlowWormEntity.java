@@ -16,8 +16,6 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class GlowWormEntity extends AnimalEntity {
-    public static TrackedData<Byte> COLOR;
-
     public GlowWormEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
     }
