@@ -1,5 +1,8 @@
 {
   "item.throwablefluids.splasher_spawn_egg": "Splasher Spawn Egg",
   "item.throwablefluids.glow_worm_spawn_egg": "Glow Worm Spawn Egg",
-  "item.throwablefluids.worm_cream": "Worm Cream"
+  "item.throwablefluids.worm_cream": "Worm Cream",
+
+  "entity.throwablefluids.glow_worm": "Glow Worm",
+  "entity.throwablefluids.splasher": "Splasher"
 }
