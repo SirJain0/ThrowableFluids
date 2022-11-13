@@ -13,12 +13,6 @@ public class ModItems {
     public static Item SPLASHER_SPAWN_EGG;
 
     public static void registerModItems() {
-        MORBID_FLESH = Registry.register(
-                Registry.ITEM,
-                new Identifier(ThrowableFluids.MOD_ID, "morbid_flesh"),
-                new Item(new Item.Settings().food(ModFoodComponents.MORBID_FLESH).group(ItemGroup.FOOD))
-        );
-
         WORM_CREAM = Registry.register(
                 Registry.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "worm_cream"),
