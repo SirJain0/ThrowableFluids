@@ -1,10 +1,7 @@
 package sirjain.throwable_fluids.entity.glow_worm;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.EscapeDangerGoal;
-import net.minecraft.entity.ai.goal.LookAroundGoal;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
+import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.passive.AnimalEntity;
@@ -21,9 +18,9 @@ public class GlowWormEntity extends AnimalEntity {
 
     @Override
     public void initGoals() {
-        this.goalSelector.add(0, new LookAroundGoal(this));
+        this.goalSelector.add(2, new LookAroundGoal(this));
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(2, new WanderAroundFarGoal(this, 0.6D));
+        this.goalSelector.add(0, new WanderAroundGoal(this, 0.6D));
         this.goalSelector.add(1, new EscapeDangerGoal(this, 1.3));
     }
 
