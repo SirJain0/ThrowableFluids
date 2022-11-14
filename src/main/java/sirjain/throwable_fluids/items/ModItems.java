@@ -9,6 +9,7 @@ import sirjain.throwable_fluids.main.ThrowableFluids;
 public class ModItems {
     public static Item SPLASHED_GEL;
     public static Item WORM_CREAM;
+    public static Item SPLASHER_FISH;
     public static Item GLOW_WORM_SPAWN_EGG;
     public static Item SPLASHER_SPAWN_EGG;
 
@@ -23,6 +24,12 @@ public class ModItems {
                 Registry.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "splashed_gel"),
                 new Item(new Item.Settings().group(ItemGroup.MISC).fireproof())
+        );
+
+        SPLASHER_FISH = Registry.register(
+                Registry.ITEM,
+                new Identifier(ThrowableFluids.MOD_ID, "splasher_fish"),
+                new Item(new Item.Settings().food(ModFoodComponents.SPLASHER_FISH).group(ItemGroup.MISC))
         );
     }
 
