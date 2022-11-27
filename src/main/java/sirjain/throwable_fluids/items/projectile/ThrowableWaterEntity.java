@@ -1,12 +1,15 @@
 package sirjain.throwable_fluids.items.projectile;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Item;
 import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 import sirjain.throwable_fluids.entity.other.ModEntityTypes;
@@ -27,7 +30,16 @@ public class ThrowableWaterEntity extends ThrownItemEntity {
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
         if (!this.world.isClient) {
-            System.out.println("Hit something!");
+            this.kill();
+        }
+    }
+
+    @Override
+    protected void onEntityHit(EntityHitResult entityHitResult) {
+        super.onEntityHit(entityHitResult);
+        if (!world.isClient) {
+            Entity entity = entityHitResult.getEntity();
+            entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), 0);
             this.kill();
         }
     }
