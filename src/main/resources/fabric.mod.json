@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "sirjain.throwable_fluids.main.ThrowableFluids"
+    ],
+    "client": [
+      "sirjain.throwable_fluids.main.ThrowableFluidsClient"
     ]
   },
 
