@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "throwablefluids:worm_cream" },
+    { "item": "minecraft:lava_bucket" }
+  ],
+  "result": {
+    "item": "throwablefluids:throwable_lava",
+    "count": 3
+  }
+}
