@@ -4,7 +4,8 @@ import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import sirjain.throwable_fluids.entity.other.ModEntityTypes;
-import sirjain.throwable_fluids.items.projectile.ThrowableWaterItem;
+import sirjain.throwable_fluids.items.throwable_lava.ThrowableLavaItem;
+import sirjain.throwable_fluids.items.throwable_water.ThrowableWaterItem;
 import sirjain.throwable_fluids.main.ThrowableFluids;
 
 public class ModItems {
@@ -14,6 +15,7 @@ public class ModItems {
     public static Item GLOW_WORM_SPAWN_EGG;
     public static Item SPLASHER_SPAWN_EGG;
     public static Item THROWABLE_WATER;
+    public static Item THROWABLE_LAVA;
 
     public static void registerModItems() {
         WORM_CREAM = Registry.register(
@@ -38,6 +40,12 @@ public class ModItems {
                 Registry.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "throwable_water"),
                 new ThrowableWaterItem(new Item.Settings().group(ItemGroup.MISC).maxCount(16))
+        );
+
+        THROWABLE_LAVA = Registry.register(
+                Registry.ITEM,
+                new Identifier(ThrowableFluids.MOD_ID, "throwable_lava"),
+                new ThrowableLavaItem(new Item.Settings().group(ItemGroup.MISC).maxCount(16))
         );
     }
 

@@ -17,7 +17,8 @@ import sirjain.throwable_fluids.entity.glow_worm.GlowWormRenderer;
 import sirjain.throwable_fluids.entity.splasher.SplasherEntity;
 import sirjain.throwable_fluids.entity.splasher.SplasherModel;
 import sirjain.throwable_fluids.entity.splasher.SplasherRenderer;
-import sirjain.throwable_fluids.items.projectile.ThrowableWaterEntity;
+import sirjain.throwable_fluids.items.throwable_lava.ThrowableLavaEntity;
+import sirjain.throwable_fluids.items.throwable_water.ThrowableWaterEntity;
 
 import static sirjain.throwable_fluids.main.ThrowableFluids.MOD_ID;
 
@@ -43,8 +44,17 @@ public class ModEntityTypes {
 
     public static final EntityType<ThrowableWaterEntity> THROWABLE_WATER_ENTITY = Registry.register(
             Registry.ENTITY_TYPE,
-            new Identifier(MOD_ID, "packed_snowball"),
+            new Identifier(MOD_ID, "throwable_water"),
             FabricEntityTypeBuilder.<ThrowableWaterEntity>create(SpawnGroup.MISC, ThrowableWaterEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.25F, 0.25F)) // In-game dimensions
+                    .trackRangeBlocks(8).trackedUpdateRate(10)
+                    .build()
+    );
+
+    public static final EntityType<ThrowableLavaEntity> THROWABLE_LAVA_ENTITY = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier(MOD_ID, "throwable_lava"),
+            FabricEntityTypeBuilder.<ThrowableLavaEntity>create(SpawnGroup.MISC, ThrowableLavaEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25F, 0.25F)) // In-game dimensions
                     .trackRangeBlocks(8).trackedUpdateRate(10)
                     .build()
@@ -63,5 +73,6 @@ public class ModEntityTypes {
         EntityModelLayerRegistry.registerModelLayer(GLOW_WORM_LAYER, GlowWormModel::getTexturedModelData);
 
         EntityRendererRegistry.register(ModEntityTypes.THROWABLE_WATER_ENTITY, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntityTypes.THROWABLE_LAVA_ENTITY, FlyingItemEntityRenderer::new);
     }
 }
