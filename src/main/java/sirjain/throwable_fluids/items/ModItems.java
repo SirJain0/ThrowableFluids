@@ -37,7 +37,7 @@ public class ModItems {
         THROWABLE_WATER = Registry.register(
                 Registry.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "throwable_water"),
-                new ThrowableWaterItem(new Item.Settings().group(ItemGroup.MISC))
+                new ThrowableWaterItem(new Item.Settings().group(ItemGroup.MISC).maxCount(16))
         );
     }
 

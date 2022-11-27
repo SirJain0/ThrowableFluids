@@ -41,14 +41,12 @@ public class ModEntityTypes {
                     .build()
     );
 
-    public static final EntityModelLayer THROWABLE_WATER_LAYER = new EntityModelLayer(new Identifier(MOD_ID, "throwable_water"), "root");
     public static final EntityType<ThrowableWaterEntity> THROWABLE_WATER_ENTITY = Registry.register(
             Registry.ENTITY_TYPE,
-            new Identifier(MOD_ID, "throwable_water"),
-            FabricEntityTypeBuilder.create(SpawnGroup.MISC, ThrowableWaterEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
-                    .trackRangeBlocks(4)
-                    .trackedUpdateRate(10)
+            new Identifier(MOD_ID, "packed_snowball"),
+            FabricEntityTypeBuilder.<ThrowableWaterEntity>create(SpawnGroup.MISC, ThrowableWaterEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.25F, 0.25F)) // In-game dimensions
+                    .trackRangeBlocks(8).trackedUpdateRate(10)
                     .build()
     );
 

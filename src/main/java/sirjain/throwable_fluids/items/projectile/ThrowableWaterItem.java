@@ -9,27 +9,28 @@ import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import sirjain.throwable_fluids.entity.other.ModEntityTypes;
 
 public class ThrowableWaterItem extends Item {
     public ThrowableWaterItem(Settings settings) {
         super(settings);
     }
 
-    @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
-        ItemStack itemStack = player.getStackInHand(hand);
-        world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_ENDER_PEARL_THROW, SoundCategory.NEUTRAL, 0.5F, 1F); // plays a globalSoundEvent
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        ItemStack itemStack = user.getStackInHand(hand);
+        world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5F, 1F); // plays a globalSoundEvent
+
+		user.getItemCooldownManager().set(this, 3);
 
         if (!world.isClient) {
-            ThrowableWaterEntity throwableWaterEntity = new ThrowableWaterEntity(ModEntityTypes.THROWABLE_WATER_ENTITY, world);
+            // Spawns the projectile
+            ThrowableWaterEntity throwableWaterEntity = new ThrowableWaterEntity(world, user);
             throwableWaterEntity.setItem(itemStack);
-            throwableWaterEntity.setVelocity(player, player.getPitch(), player.getYaw(), 0.0F, 1.5F, 0F);
+            throwableWaterEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 0.75F, 0F);
             world.spawnEntity(throwableWaterEntity);
         }
 
-        player.incrementStat(Stats.USED.getOrCreateStat(this));
-        if (!player.getAbilities().creativeMode) {
+        user.incrementStat(Stats.USED.getOrCreateStat(this));
+        if (!user.getAbilities().creativeMode) {
             itemStack.decrement(1);
         }
 
