@@ -11,36 +11,14 @@ import net.minecraft.world.biome.BiomeKeys;
 
 public class ModEntitySpawn {
     public static void entitySpawn() {
+        GlowWormSpawn();
+        SplasherSpawn();
 
-        // == GLOW WORM ==
-        BiomeModifications.addSpawn(
-                BiomeSelectors.includeByKey(BiomeKeys.DESERT),
-                SpawnGroup.CREATURE,
-                ModEntityTypes.GLOW_WORM_ENTITY,
-                65,
-                2,
-                3
-        );
+        SpawnRestriction.register(ModEntityTypes.GLOW_WORM_ENTITY, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::isValidNaturalSpawn);
+        SpawnRestriction.register(ModEntityTypes.SPLASHER_ENTITY, SpawnRestriction.Location.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, FishEntity::canSpawn);
+    }
 
-        BiomeModifications.addSpawn(
-                BiomeSelectors.includeByKey(BiomeKeys.WARPED_FOREST),
-                SpawnGroup.CREATURE,
-                ModEntityTypes.GLOW_WORM_ENTITY,
-                50,
-                2,
-                4
-        );
-
-        BiomeModifications.addSpawn(
-                BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
-                SpawnGroup.CREATURE,
-                ModEntityTypes.GLOW_WORM_ENTITY,
-                70,
-                1,
-                2
-        );
-
-        // == SPLASHER ==
+    public static void SplasherSpawn() {
         BiomeModifications.addSpawn(
                 BiomeSelectors.includeByKey(BiomeKeys.FROZEN_RIVER),
                 SpawnGroup.WATER_CREATURE,
@@ -85,8 +63,34 @@ public class ModEntitySpawn {
                 2,
                 5
         );
+    }
 
-        SpawnRestriction.register(ModEntityTypes.GLOW_WORM_ENTITY, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::isValidNaturalSpawn);
-        SpawnRestriction.register(ModEntityTypes.SPLASHER_ENTITY, SpawnRestriction.Location.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, FishEntity::canSpawn);
+    public static void GlowWormSpawn() {
+        BiomeModifications.addSpawn(
+                BiomeSelectors.includeByKey(BiomeKeys.DESERT),
+                SpawnGroup.CREATURE,
+                ModEntityTypes.GLOW_WORM_ENTITY,
+                65,
+                2,
+                3
+        );
+
+        BiomeModifications.addSpawn(
+                BiomeSelectors.includeByKey(BiomeKeys.WARPED_FOREST),
+                SpawnGroup.CREATURE,
+                ModEntityTypes.GLOW_WORM_ENTITY,
+                50,
+                2,
+                4
+        );
+
+        BiomeModifications.addSpawn(
+                BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
+                SpawnGroup.CREATURE,
+                ModEntityTypes.GLOW_WORM_ENTITY,
+                70,
+                1,
+                2
+        );
     }
 }
