@@ -11,6 +11,8 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
 public class ThrowableWaterItem extends Item {
+    short cooldown = 3;
+
     public ThrowableWaterItem(Settings settings) {
         super(settings);
     }
@@ -19,7 +21,7 @@ public class ThrowableWaterItem extends Item {
         ItemStack itemStack = user.getStackInHand(hand);
         world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5F, 1F); // plays a globalSoundEvent
 
-		user.getItemCooldownManager().set(this, 3);
+		user.getItemCooldownManager().set(this, cooldown);
 
         if (!world.isClient) {
             // Spawns the projectile
