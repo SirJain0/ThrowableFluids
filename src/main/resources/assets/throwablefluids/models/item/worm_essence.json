@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "throwablefluids:item/worm_cream"
+    "layer0": "throwablefluids:item/worm_essence"
   }
 }

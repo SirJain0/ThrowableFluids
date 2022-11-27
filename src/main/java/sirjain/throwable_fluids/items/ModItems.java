@@ -10,7 +10,7 @@ import sirjain.throwable_fluids.main.ThrowableFluids;
 
 public class ModItems {
     public static Item SPLASHED_GEL;
-    public static Item WORM_CREAM;
+    public static Item WORM_ESSENCE;
     public static Item SPLASHER_FISH;
     public static Item GLOW_WORM_SPAWN_EGG;
     public static Item SPLASHER_SPAWN_EGG;
@@ -30,10 +30,10 @@ public class ModItems {
                 new ThrowableLavaItem(new Item.Settings().group(ThrowableFluids.TF_ITEM_GROUP).maxCount(32))
         );
 
-        WORM_CREAM = Registry.register(
+        WORM_ESSENCE = Registry.register(
                 Registry.ITEM,
-                new Identifier(ThrowableFluids.MOD_ID, "worm_cream"),
-                new Item(new Item.Settings().group(ThrowableFluids.TF_ITEM_GROUP).fireproof())
+                new Identifier(ThrowableFluids.MOD_ID, "worm_essence"),
+                new WormEssenceItem(new Item.Settings().group(ThrowableFluids.TF_ITEM_GROUP).fireproof())
         );
 
         SPLASHED_GEL = Registry.register(

@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "throwablefluids:worm_cream",
+          "name": "throwablefluids:worm_essence",
           "functions": [
             {
               "function": "minecraft:set_count",
