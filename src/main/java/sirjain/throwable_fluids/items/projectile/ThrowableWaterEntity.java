@@ -7,6 +7,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.mob.MagmaCubeEntity;
+import net.minecraft.entity.passive.StriderEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Item;
@@ -46,7 +47,11 @@ public class ThrowableWaterEntity extends ThrownItemEntity {
 
             Entity entity = entityHitResult.getEntity();
 
-            if (entity instanceof BlazeEntity || entity instanceof GlowWormEntity || entity instanceof MagmaCubeEntity) {
+            if (entity instanceof BlazeEntity ||
+                    entity instanceof GlowWormEntity ||
+                    entity instanceof MagmaCubeEntity ||
+                    entity instanceof StriderEntity)
+            {
                 entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), a);
             } else {
                 entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), b);
