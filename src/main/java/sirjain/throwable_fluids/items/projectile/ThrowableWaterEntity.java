@@ -1,11 +1,11 @@
 package sirjain.throwable_fluids.items.projectile;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
-import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Item;
 import net.minecraft.util.hit.BlockHitResult;
@@ -16,7 +16,7 @@ import sirjain.throwable_fluids.entity.other.ModEntityTypes;
 import sirjain.throwable_fluids.items.ModItems;
 
 public class ThrowableWaterEntity extends ThrownItemEntity {
-    public static final Fluid fluid = Fluids.WATER;
+    public static final BlockState fluid = Fluids.WATER.getDefaultState().getBlockState();
 
     public ThrowableWaterEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super(entityType, world);
@@ -38,8 +38,9 @@ public class ThrowableWaterEntity extends ThrownItemEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
         if (!world.isClient) {
+            short d = 0;
             Entity entity = entityHitResult.getEntity();
-            entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), 0);
+            entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), d);
             this.kill();
         }
     }
@@ -47,7 +48,7 @@ public class ThrowableWaterEntity extends ThrownItemEntity {
     // Method is called when colliding with a block
     @Override
     protected void onBlockHit(BlockHitResult blockHitResult) {
-        world.setBlockState(getBlockPos(), fluid.getDefaultState().getBlockState(), 11);
+        world.setBlockState(getBlockPos(), fluid, 11);
         super.onBlockHit(blockHitResult);
     }
 
@@ -58,6 +59,6 @@ public class ThrowableWaterEntity extends ThrownItemEntity {
 
     @Override
     protected float getGravity() {
-        return 0.05F;
+        return 0.05f;
     }
 }
