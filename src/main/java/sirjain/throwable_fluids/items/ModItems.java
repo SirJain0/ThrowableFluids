@@ -39,13 +39,13 @@ public class ModItems {
         THROWABLE_WATER = Registry.register(
                 Registry.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "throwable_water"),
-                new ThrowableWaterItem(new Item.Settings().group(ItemGroup.MISC).maxCount(16))
+                new ThrowableWaterItem(new Item.Settings().group(ItemGroup.MISC).maxCount(32))
         );
 
         THROWABLE_LAVA = Registry.register(
                 Registry.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "throwable_lava"),
-                new ThrowableLavaItem(new Item.Settings().group(ItemGroup.MISC).maxCount(16))
+                new ThrowableLavaItem(new Item.Settings().group(ItemGroup.MISC).maxCount(32))
         );
     }
 
