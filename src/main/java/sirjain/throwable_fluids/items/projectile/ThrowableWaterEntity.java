@@ -47,7 +47,6 @@ public class ThrowableWaterEntity extends ThrownItemEntity {
     // Method is called when colliding with a block
     @Override
     protected void onBlockHit(BlockHitResult blockHitResult) {
-        System.out.println("Hit a block!");
         world.setBlockState(getBlockPos(), fluid.getDefaultState().getBlockState(), 11);
         super.onBlockHit(blockHitResult);
     }
