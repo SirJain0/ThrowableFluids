@@ -5,6 +5,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.mob.BlazeEntity;
+import net.minecraft.entity.mob.MagmaCubeEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Item;
@@ -12,6 +14,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
+import sirjain.throwable_fluids.entity.glow_worm.GlowWormEntity;
 import sirjain.throwable_fluids.entity.other.ModEntityTypes;
 import sirjain.throwable_fluids.items.ModItems;
 
@@ -38,9 +41,17 @@ public class ThrowableWaterEntity extends ThrownItemEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
         if (!world.isClient) {
-            short d = 0;
+            short a = 2;
+            short b = 0;
+
             Entity entity = entityHitResult.getEntity();
-            entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), d);
+
+            if (entity instanceof BlazeEntity || entity instanceof GlowWormEntity || entity instanceof MagmaCubeEntity) {
+                entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), a);
+            } else {
+                entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), b);
+            }
+
             this.kill();
         }
     }
