@@ -5,6 +5,11 @@
   "item.throwablefluids.splashed_gel": "Splashed Gel",
   "item.throwablefluids.splasher_fish": "Splasher Fish",
 
+  "item.throwablefluids.throwable_lava": "Throwable Lava",
+  "item.throwablefluids.throwable_water": "Throwable Water",
+
   "entity.throwablefluids.glow_worm": "Glow Worm",
-  "entity.throwablefluids.splasher": "Splasher"
+  "entity.throwablefluids.splasher": "Splasher",
+  "entity.throwablefluids.throwable_lava": "Throwable Lava",
+  "entity.throwablefluids.throwable_water": "Throwable Water"
 }
