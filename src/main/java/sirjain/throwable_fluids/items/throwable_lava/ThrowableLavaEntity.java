@@ -9,6 +9,7 @@ import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.mob.DrownedEntity;
 import net.minecraft.entity.mob.MagmaCubeEntity;
 import net.minecraft.entity.passive.FishEntity;
+import net.minecraft.entity.passive.SnowGolemEntity;
 import net.minecraft.entity.passive.StriderEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.fluid.Fluids;
@@ -46,11 +47,14 @@ public class ThrowableLavaEntity extends ThrownItemEntity {
         if (!world.isClient) {
             short a = 2;
             short b = 0;
+            short c = 5;
 
             Entity entity = entityHitResult.getEntity();
 
             if (entity instanceof FishEntity || entity instanceof DrownedEntity) {
                 entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), a);
+            } else if (entity instanceof SnowGolemEntity) {
+                entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), c);
             } else {
                 entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), b);
             }
