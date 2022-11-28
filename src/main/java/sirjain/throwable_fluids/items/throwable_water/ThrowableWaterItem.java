@@ -3,6 +3,7 @@ package sirjain.throwable_fluids.items.throwable_water;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
@@ -35,6 +36,8 @@ public class ThrowableWaterItem extends Item {
         if (!user.getAbilities().creativeMode) {
             itemStack.decrement(1);
         }
+
+//        user.giveItemStack(new ItemStack(Items.IRON_NUGGET));
 
         return TypedActionResult.success(itemStack, world.isClient());
     }
