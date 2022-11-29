@@ -1,5 +1,6 @@
 package sirjain.throwable_fluids.items.throwable_water;
 
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -10,6 +11,8 @@ import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+
+import static sirjain.throwable_fluids.main.ThrowableFluids.generateRandomNum;
 
 public class ThrowableWaterItem extends Item {
     short cooldown = 3;
@@ -23,6 +26,7 @@ public class ThrowableWaterItem extends Item {
         world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.NEUTRAL, 0.5F, 1F); // plays a globalSoundEvent
 
 		user.getItemCooldownManager().set(this, cooldown);
+        generateRandomNum();
 
         if (!world.isClient) {
             // Spawns the projectile
@@ -37,7 +41,9 @@ public class ThrowableWaterItem extends Item {
             itemStack.decrement(1);
         }
 
-//        user.giveItemStack(new ItemStack(Items.IRON_NUGGET));
+        if (generateRandomNum() == 0) {
+            user.getInventory().insertStack(new ItemStack(Items.IRON_NUGGET));
+        }
 
         return TypedActionResult.success(itemStack, world.isClient());
     }

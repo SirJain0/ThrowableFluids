@@ -8,6 +8,7 @@ import net.minecraft.util.Identifier;
 import sirjain.throwable_fluids.entity.other.ModEntitySpawn;
 import sirjain.throwable_fluids.entity.other.ModEntityTypes;
 import sirjain.throwable_fluids.items.ModItems;
+import java.util.Random;
 
 public class ThrowableFluids implements ModInitializer {
 	public static final String MOD_ID = "throwablefluids";
@@ -22,5 +23,12 @@ public class ThrowableFluids implements ModInitializer {
 		ModEntitySpawn.entitySpawn();
 
 		System.out.println("Hi, "+MOD_ID+"!");
+	}
+
+	public static int generateRandomNum() {
+		Random genRand = new Random();
+		int max = 7;
+
+		return genRand.nextInt(max);
 	}
 }
