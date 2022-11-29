@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 public class ThrowableLavaItem extends Item {
     short cooldown = 3;
-    int maxNum = 7;
+    short maxNum = 8;
 
     public ThrowableLavaItem(Settings settings) {
         super(settings);
@@ -37,7 +37,7 @@ public class ThrowableLavaItem extends Item {
         if (!user.getAbilities().creativeMode) {
             itemStack.decrement(1);
         }
-        
+
         if (world.random.nextInt(maxNum) == 0) {
             user.getInventory().insertStack(new ItemStack(Items.IRON_NUGGET));
         }
