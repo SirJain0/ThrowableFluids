@@ -11,10 +11,9 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-import static sirjain.throwable_fluids.main.ThrowableFluids.generateRandomNum;
-
 public class ThrowableLavaItem extends Item {
     short cooldown = 3;
+    int maxNum = 7;
 
     public ThrowableLavaItem(Settings settings) {
         super(settings);
@@ -25,7 +24,6 @@ public class ThrowableLavaItem extends Item {
         world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.NEUTRAL, 0.5F, 1F); // plays a globalSoundEvent
 
         user.getItemCooldownManager().set(this, cooldown);
-        generateRandomNum();
 
         if (!world.isClient) {
             // Spawns the projectile
@@ -40,7 +38,7 @@ public class ThrowableLavaItem extends Item {
             itemStack.decrement(1);
         }
         
-        if (generateRandomNum() == 0) {
+        if (world.random.nextInt(maxNum) == 0) {
             user.getInventory().insertStack(new ItemStack(Items.IRON_NUGGET));
         }
 

@@ -24,11 +24,4 @@ public class ThrowableFluids implements ModInitializer {
 
 		System.out.println("Hi, "+MOD_ID+"!");
 	}
-
-	public static int generateRandomNum() {
-		Random genRand = new Random();
-		int max = 7;
-
-		return genRand.nextInt(max);
-	}
 }
