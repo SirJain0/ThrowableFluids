@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
+import sirjain.throwable_fluids.items.ModItems;
 
 public class SplasherEntity extends FishEntity {
     public SplasherEntity(EntityType<? extends FishEntity> entityType, World world) {
@@ -51,6 +52,6 @@ public class SplasherEntity extends FishEntity {
 
     @Override
     public ItemStack getBucketItem() {
-        return null;
+        return new ItemStack(ModItems.SPLASHER_BUCKET);
     }
 }

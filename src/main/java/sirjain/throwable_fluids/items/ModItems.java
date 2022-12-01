@@ -1,6 +1,9 @@
 package sirjain.throwable_fluids.items;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import sirjain.throwable_fluids.entity.other.ModEntityTypes;
@@ -16,6 +19,7 @@ public class ModItems {
     public static Item SPLASHER_SPAWN_EGG;
     public static Item THROWABLE_WATER;
     public static Item THROWABLE_LAVA;
+    public static Item SPLASHER_BUCKET;
 
     public static void registerModItems() {
         THROWABLE_WATER = Registry.register(
@@ -46,6 +50,12 @@ public class ModItems {
                 Registry.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "splasher_fish"),
                 new Item(new Item.Settings().food(ModFoodComponents.SPLASHER_FISH).group(ThrowableFluids.TF_ITEM_GROUP))
+        );
+
+        SPLASHER_BUCKET = Registry.register(
+                Registry.ITEM,
+                new Identifier(ThrowableFluids.MOD_ID, "splasher_bucket"),
+                new EntityBucketItem(ModEntityTypes.SPLASHER_ENTITY, Fluids.WATER, SoundEvents.ITEM_BUCKET_EMPTY_FISH, (new Item.Settings()).maxCount(1).group(ThrowableFluids.TF_ITEM_GROUP))
         );
     }
 
