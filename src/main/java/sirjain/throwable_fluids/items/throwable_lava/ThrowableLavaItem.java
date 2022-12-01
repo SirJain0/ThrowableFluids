@@ -23,7 +23,7 @@ public class ThrowableLavaItem extends Item {
         ItemStack itemStack = user.getStackInHand(hand);
 
         if (!world.isClient) {
-            world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.NEUTRAL, 0.5F, 1F); // plays a globalSoundEvent
+            world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.NEUTRAL, 0.5F, 1F);
 
             user.getItemCooldownManager().set(this, cooldown);
 

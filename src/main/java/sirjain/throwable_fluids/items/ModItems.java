@@ -43,7 +43,7 @@ public class ModItems {
         SPLASHED_GEL = Registry.register(
                 Registry.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "splashed_gel"),
-                new Item(new Item.Settings().group(ThrowableFluids.TF_ITEM_GROUP).fireproof())
+                new Item(new Item.Settings().group(ThrowableFluids.TF_ITEM_GROUP))
         );
 
         SPLASHER_FISH = Registry.register(
