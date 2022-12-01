@@ -21,27 +21,30 @@ public class ThrowableLavaItem extends Item {
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
-        world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.NEUTRAL, 0.5F, 1F); // plays a globalSoundEvent
-
-        user.getItemCooldownManager().set(this, cooldown);
 
         if (!world.isClient) {
+            world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.NEUTRAL, 0.5F, 1F); // plays a globalSoundEvent
+
+            user.getItemCooldownManager().set(this, cooldown);
+
             // Spawns the projectile
             ThrowableLavaEntity throwableLavaEntity = new ThrowableLavaEntity(world, user);
             throwableLavaEntity.setItem(itemStack);
             throwableLavaEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 0.75F, 0F);
             world.spawnEntity(throwableLavaEntity);
+
+            user.incrementStat(Stats.USED.getOrCreateStat(this));
+
+            if (!user.getAbilities().creativeMode) {
+                (itemStack).decrement(1);
+            }
+
+            if (world.random.nextInt(maxNum) == 0) {
+                user.getInventory().insertStack(new ItemStack(Items.IRON_NUGGET));
+                user.playerScreenHandler.sendContentUpdates();
+            }
         }
 
-        user.incrementStat(Stats.USED.getOrCreateStat(this));
-        if (!user.getAbilities().creativeMode) {
-            itemStack.decrement(1);
-        }
-
-        if (world.random.nextInt(maxNum) == 0) {
-            user.getInventory().insertStack(new ItemStack(Items.IRON_NUGGET));
-        }
-
-        return TypedActionResult.success(itemStack, world.isClient());
+        return TypedActionResult.success(itemStack, !world.isClient());
     }
 }
