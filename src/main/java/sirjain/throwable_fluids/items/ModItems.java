@@ -1,6 +1,5 @@
 package sirjain.throwable_fluids.items;
 
-import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
 import net.minecraft.sound.SoundEvents;
