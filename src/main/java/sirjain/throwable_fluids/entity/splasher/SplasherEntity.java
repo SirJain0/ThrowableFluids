@@ -54,4 +54,13 @@ public class SplasherEntity extends FishEntity {
     public ItemStack getBucketItem() {
         return new ItemStack(ModItems.SPLASHER_BUCKET);
     }
+
+    @Override
+    public void mobTick() {
+        if (this.getHealth() < 8 && this.age % 100 == 0) {
+            this.heal(1);
+        }
+
+        super.mobTick();
+    }
 }
