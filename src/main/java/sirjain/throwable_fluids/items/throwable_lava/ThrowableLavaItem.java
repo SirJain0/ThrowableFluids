@@ -47,4 +47,9 @@ public class ThrowableLavaItem extends Item {
 
         return TypedActionResult.success(itemStack, !world.isClient());
     }
+
+    @Override
+    public boolean hasGlint(ItemStack stack) {
+        return true;
+    }
 }
