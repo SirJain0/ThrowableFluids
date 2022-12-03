@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 public class ThrowableLavaItem extends Item {
     short cooldown = 3;
-    short maxNum = 8;
+    short maxNum = 32;
 
     public ThrowableLavaItem(Settings settings) {
         super(settings);
@@ -39,10 +39,20 @@ public class ThrowableLavaItem extends Item {
                 (itemStack).decrement(1);
             }
 
-            if (world.random.nextInt(maxNum) == 0) {
-                user.getInventory().insertStack(new ItemStack(Items.IRON_NUGGET));
-                user.playerScreenHandler.sendContentUpdates();
+            // Insert random item into the player's inventory - Gold nuggets, prismarine crystals, ender pearls, charcoal, or phantom membranes.
+            if (world.random.nextInt(maxNum) == 0 || world.random.nextInt(maxNum) == 4) {
+                user.getInventory().insertStack(new ItemStack(Items.GOLD_NUGGET));
+            } else if (world.random.nextInt(maxNum) == 1) {
+                user.getInventory().insertStack(new ItemStack(Items.PRISMARINE_CRYSTALS));
+            } else if (world.random.nextInt(maxNum) == 2) {
+                user.getInventory().insertStack(new ItemStack(Items.ENDER_PEARL));
+            } else if (world.random.nextInt(maxNum) == 3) {
+                user.getInventory().insertStack(new ItemStack(Items.CHARCOAL));
+            } else if (world.random.nextInt(maxNum) == 5) {
+               user.getInventory().insertStack(new ItemStack(Items.PHANTOM_MEMBRANE));
             }
+
+            user.playerScreenHandler.sendContentUpdates();
         }
 
         return TypedActionResult.success(itemStack, !world.isClient());
