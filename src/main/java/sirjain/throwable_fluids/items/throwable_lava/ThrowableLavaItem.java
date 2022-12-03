@@ -30,7 +30,7 @@ public class ThrowableLavaItem extends Item {
             // Spawns the projectile
             ThrowableLavaEntity throwableLavaEntity = new ThrowableLavaEntity(world, user);
             throwableLavaEntity.setItem(itemStack);
-            throwableLavaEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 0.75F, 0F);
+            throwableLavaEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0, 0.8F, 0);
             world.spawnEntity(throwableLavaEntity);
 
             user.incrementStat(Stats.USED.getOrCreateStat(this));

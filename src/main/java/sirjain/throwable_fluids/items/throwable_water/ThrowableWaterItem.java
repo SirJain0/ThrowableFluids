@@ -30,7 +30,7 @@ public class ThrowableWaterItem extends Item {
             // Spawns the projectile
             ThrowableWaterEntity throwableWaterEntity = new ThrowableWaterEntity(world, user);
             throwableWaterEntity.setItem(itemStack);
-            throwableWaterEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 0.75F, 0F);
+            throwableWaterEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 0.8F, 0F);
             world.spawnEntity(throwableWaterEntity);
 
             user.incrementStat(Stats.USED.getOrCreateStat(this));

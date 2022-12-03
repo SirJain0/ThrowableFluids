@@ -75,6 +75,6 @@ public class ThrowableWaterEntity extends ThrownItemEntity {
 
     @Override
     protected float getGravity() {
-        return 0.05f;
+        return 0.04f;
     }
 }
