@@ -14,7 +14,7 @@ public class ModEntitySpawn {
         GlowWormSpawn();
         SplasherSpawn();
 
-        SpawnRestriction.register(ModEntityTypes.GLOW_WORM_ENTITY, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::isValidNaturalSpawn);
+        SpawnRestriction.register(ModEntityTypes.GLOW_WORM_ENTITY, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canMobSpawn);
         SpawnRestriction.register(ModEntityTypes.SPLASHER_ENTITY, SpawnRestriction.Location.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, FishEntity::canSpawn);
     }
 
@@ -70,7 +70,7 @@ public class ModEntitySpawn {
                 BiomeSelectors.includeByKey(BiomeKeys.DESERT),
                 SpawnGroup.CREATURE,
                 ModEntityTypes.GLOW_WORM_ENTITY,
-                85,
+                80,
                 2,
                 3
         );
