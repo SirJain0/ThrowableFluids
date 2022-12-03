@@ -24,8 +24,8 @@ public class ModEntitySpawn {
                 SpawnGroup.WATER_CREATURE,
                 ModEntityTypes.SPLASHER_ENTITY,
                 64,
-                3,
-                6
+                2,
+                3
         );
 
         BiomeModifications.addSpawn(
@@ -70,7 +70,25 @@ public class ModEntitySpawn {
                 BiomeSelectors.includeByKey(BiomeKeys.DESERT),
                 SpawnGroup.CREATURE,
                 ModEntityTypes.GLOW_WORM_ENTITY,
-                65,
+                85,
+                2,
+                3
+        );
+
+        BiomeModifications.addSpawn(
+                BiomeSelectors.includeByKey(BiomeKeys.NETHER_WASTES),
+                SpawnGroup.CREATURE,
+                ModEntityTypes.GLOW_WORM_ENTITY,
+                100,
+                2,
+                3
+        );
+
+        BiomeModifications.addSpawn(
+                BiomeSelectors.includeByKey(BiomeKeys.CRIMSON_FOREST),
+                SpawnGroup.CREATURE,
+                ModEntityTypes.GLOW_WORM_ENTITY,
+                110,
                 2,
                 3
         );
