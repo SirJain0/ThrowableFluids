@@ -45,7 +45,7 @@ public class ThrowableLavaEntity extends ThrownItemEntity {
         super.onEntityHit(entityHitResult);
         if (!world.isClient) {
             short a = 2;
-            short b = 0;
+            short b = 1;
             short c = 5;
 
             Entity entity = entityHitResult.getEntity();
