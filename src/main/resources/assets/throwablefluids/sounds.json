@@ -1,0 +1,14 @@
+{
+  "splasher_flop": {
+    "subtitle": "subtitles.throwablefluids.splasher_flop",
+    "sounds": [
+      "throwablefluids:splasher_flop"
+    ]
+  },
+  "splasher_death": {
+    "subtitle": "subtitles.throwablefluids.splasher_death",
+    "sounds": [
+      "throwablefluids:splasher_death"
+    ]
+  }
+}

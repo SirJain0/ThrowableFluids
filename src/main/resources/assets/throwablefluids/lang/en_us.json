@@ -12,5 +12,8 @@
   "entity.throwablefluids.glow_worm": "Glow Worm",
   "entity.throwablefluids.splasher": "Splasher",
   "entity.throwablefluids.throwable_lava": "Throwable Lava",
-  "entity.throwablefluids.throwable_water": "Throwable Water"
+  "entity.throwablefluids.throwable_water": "Throwable Water",
+
+  "subtitles.throwablefluids.splasher_flop": "Splasher flops",
+  "subtitles.throwablefluids.splasher_death": "Splasher dies"
 }

@@ -12,6 +12,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 import sirjain.throwable_fluids.items.ModItems;
+import sirjain.throwable_fluids.sounds.ModSoundEvents;
 
 public class SplasherEntity extends FishEntity {
     public SplasherEntity(EntityType<? extends FishEntity> entityType, World world) {
@@ -36,12 +37,12 @@ public class SplasherEntity extends FishEntity {
 
     @Override
     protected SoundEvent getFlopSound() {
-        return SoundEvents.ENTITY_COD_FLOP;
+        return ModSoundEvents.SPLASHER_FLOP;
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.ENTITY_COD_DEATH;
+        return ModSoundEvents.SPLASHER_DEATH;
     }
 
     public static DefaultAttributeContainer.Builder createSplasherAttributes() {
