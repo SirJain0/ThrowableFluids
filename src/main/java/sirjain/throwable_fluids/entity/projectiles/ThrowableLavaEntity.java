@@ -1,16 +1,13 @@
-package sirjain.throwable_fluids.items.throwable_lava;
+package sirjain.throwable_fluids.entity.projectiles;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.mob.DrownedEntity;
-import net.minecraft.entity.mob.MagmaCubeEntity;
 import net.minecraft.entity.passive.FishEntity;
 import net.minecraft.entity.passive.SnowGolemEntity;
-import net.minecraft.entity.passive.StriderEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Item;

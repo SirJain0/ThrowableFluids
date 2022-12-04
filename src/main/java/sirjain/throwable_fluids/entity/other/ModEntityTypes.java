@@ -17,8 +17,8 @@ import sirjain.throwable_fluids.entity.glow_worm.GlowWormRenderer;
 import sirjain.throwable_fluids.entity.splasher.SplasherEntity;
 import sirjain.throwable_fluids.entity.splasher.SplasherModel;
 import sirjain.throwable_fluids.entity.splasher.SplasherRenderer;
-import sirjain.throwable_fluids.items.throwable_lava.ThrowableLavaEntity;
-import sirjain.throwable_fluids.items.throwable_water.ThrowableWaterEntity;
+import sirjain.throwable_fluids.entity.projectiles.ThrowableLavaEntity;
+import sirjain.throwable_fluids.entity.projectiles.ThrowableWaterEntity;
 
 import static sirjain.throwable_fluids.main.ThrowableFluids.MOD_ID;
 

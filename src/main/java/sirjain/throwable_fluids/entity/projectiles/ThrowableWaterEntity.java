@@ -1,4 +1,4 @@
-package sirjain.throwable_fluids.items.throwable_water;
+package sirjain.throwable_fluids.entity.projectiles;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;

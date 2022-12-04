@@ -6,8 +6,8 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import sirjain.throwable_fluids.entity.other.ModEntityTypes;
-import sirjain.throwable_fluids.items.throwable_lava.ThrowableLavaItem;
-import sirjain.throwable_fluids.items.throwable_water.ThrowableWaterItem;
+import sirjain.throwable_fluids.items.projectiles.ThrowableLavaItem;
+import sirjain.throwable_fluids.items.projectiles.ThrowableWaterItem;
 import sirjain.throwable_fluids.main.ThrowableFluids;
 
 public class ModItems {

@@ -1,4 +1,4 @@
-package sirjain.throwable_fluids.items.throwable_water;
+package sirjain.throwable_fluids.items.projectiles;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -10,12 +10,13 @@ import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import sirjain.throwable_fluids.entity.projectiles.ThrowableLavaEntity;
 
-public class ThrowableWaterItem extends Item {
+public class ThrowableLavaItem extends Item {
     short cooldown = 3;
     short maxNum = 32;
 
-    public ThrowableWaterItem(Settings settings) {
+    public ThrowableLavaItem(Settings settings) {
         super(settings);
     }
 
@@ -28,14 +29,15 @@ public class ThrowableWaterItem extends Item {
             user.getItemCooldownManager().set(this, cooldown);
 
             // Spawns the projectile
-            ThrowableWaterEntity throwableWaterEntity = new ThrowableWaterEntity(world, user);
-            throwableWaterEntity.setItem(itemStack);
-            throwableWaterEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 0.8F, 0F);
-            world.spawnEntity(throwableWaterEntity);
+            ThrowableLavaEntity throwableLavaEntity = new ThrowableLavaEntity(world, user);
+            throwableLavaEntity.setItem(itemStack);
+            throwableLavaEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0, 0.8F, 0);
+            world.spawnEntity(throwableLavaEntity);
 
             user.incrementStat(Stats.USED.getOrCreateStat(this));
+
             if (!user.getAbilities().creativeMode) {
-                itemStack.decrement(1);
+                (itemStack).decrement(1);
             }
 
             // Insert random item into the player's inventory - Gold nuggets, prismarine crystals, ender pearls, charcoal, or phantom membranes.
@@ -48,7 +50,7 @@ public class ThrowableWaterItem extends Item {
             } else if (world.random.nextInt(maxNum) == 3) {
                 user.getInventory().insertStack(new ItemStack(Items.CHARCOAL));
             } else if (world.random.nextInt(maxNum) == 5) {
-                user.getInventory().insertStack(new ItemStack(Items.PHANTOM_MEMBRANE));
+               user.getInventory().insertStack(new ItemStack(Items.PHANTOM_MEMBRANE));
             }
 
             user.playerScreenHandler.sendContentUpdates();
