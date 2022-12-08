@@ -10,5 +10,11 @@
     "sounds": [
       "throwablefluids:splasher_death"
     ]
+  },
+  "glow_worm_death": {
+    "subtitle": "subtitles.throwablefluids.glow_worm_death",
+    "sounds": [
+      "throwablefluids:glow_worm_death"
+    ]
   }
 }
