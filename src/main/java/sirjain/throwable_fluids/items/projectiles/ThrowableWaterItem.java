@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 import sirjain.throwable_fluids.entity.projectiles.ThrowableWaterEntity;
 
 public class ThrowableWaterItem extends Item {
-    short cooldown = 3;
+    short cooldown = 20;
     short maxNum = 32;
 
     public ThrowableWaterItem(Settings settings) {

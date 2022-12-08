@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 import sirjain.throwable_fluids.entity.projectiles.ThrowableLavaEntity;
 
 public class ThrowableLavaItem extends Item {
-    short cooldown = 3;
+    short cooldown = 20;
     short maxNum = 32;
 
     public ThrowableLavaItem(Settings settings) {
