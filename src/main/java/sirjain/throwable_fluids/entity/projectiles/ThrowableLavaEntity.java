@@ -1,18 +1,11 @@
 package sirjain.throwable_fluids.entity.projectiles;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.mob.DrownedEntity;
-import net.minecraft.entity.passive.FishEntity;
-import net.minecraft.entity.passive.SnowGolemEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Item;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 import sirjain.throwable_fluids.entity.other.ModEntityTypes;
@@ -33,37 +26,9 @@ public class ThrowableLavaEntity extends ThrownItemEntity {
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
         if (!this.world.isClient) {
+            world.setBlockState(getBlockPos(), fluid, 11);
             this.kill();
         }
-    }
-
-    @Override
-    protected void onEntityHit(EntityHitResult entityHitResult) {
-        super.onEntityHit(entityHitResult);
-        if (!world.isClient) {
-            short a = 2;
-            short b = 1;
-            short c = 5;
-
-            Entity entity = entityHitResult.getEntity();
-
-            if (entity instanceof FishEntity || entity instanceof DrownedEntity) {
-                entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), a);
-            } else if (entity instanceof SnowGolemEntity) {
-                entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), c);
-            } else {
-                entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), b);
-            }
-
-            this.kill();
-        }
-    }
-
-    // Method is called when colliding with a block
-    @Override
-    protected void onBlockHit(BlockHitResult blockHitResult) {
-        world.setBlockState(getBlockPos(), fluid, 11);
-        super.onBlockHit(blockHitResult);
     }
 
     @Override
