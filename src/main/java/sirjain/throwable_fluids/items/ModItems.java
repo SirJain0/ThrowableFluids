@@ -1,10 +1,12 @@
 package sirjain.throwable_fluids.items;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import sirjain.throwable_fluids.entity.other.ModEntityTypes;
 import sirjain.throwable_fluids.items.projectiles.ThrowableLavaItem;
 import sirjain.throwable_fluids.items.projectiles.ThrowableWaterItem;
@@ -22,53 +24,69 @@ public class ModItems {
 
     public static void registerModItems() {
         THROWABLE_WATER = Registry.register(
-                Registry.ITEM,
+                Registries.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "throwable_water"),
-                new ThrowableWaterItem(new Item.Settings().group(ItemGroup.BREWING).maxCount(32))
+                new ThrowableWaterItem(new Item.Settings().maxCount(32))
         );
 
         THROWABLE_LAVA = Registry.register(
-                Registry.ITEM,
+                Registries.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "throwable_lava"),
-                new ThrowableLavaItem(new Item.Settings().group(ItemGroup.BREWING).maxCount(32))
+                new ThrowableLavaItem(new Item.Settings().maxCount(32))
         );
 
         WORM_ESSENCE = Registry.register(
-                Registry.ITEM,
+                Registries.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "worm_essence"),
-                new WormEssenceItem(new Item.Settings().group(ItemGroup.MISC).fireproof())
+                new WormEssenceItem(new Item.Settings().fireproof())
         );
 
         SPLASHED_GEL = Registry.register(
-                Registry.ITEM,
+                Registries.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "splashed_gel"),
-                new Item(new Item.Settings().group(ItemGroup.MISC))
+                new Item(new Item.Settings())
         );
 
         SPLASHER_FISH = Registry.register(
-                Registry.ITEM,
+                Registries.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "splasher_fish"),
-                new Item(new Item.Settings().food(ModFoodComponents.SPLASHER_FISH).group(ItemGroup.FOOD))
+                new Item(new Item.Settings().food(ModFoodComponents.SPLASHER_FISH))
         );
 
         SPLASHER_BUCKET = Registry.register(
-                Registry.ITEM,
+                Registries.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "splasher_bucket"),
-                new EntityBucketItem(ModEntityTypes.SPLASHER_ENTITY, Fluids.WATER, SoundEvents.ITEM_BUCKET_EMPTY_FISH, (new Item.Settings()).maxCount(1).group(ItemGroup.MISC))
+                new EntityBucketItem(ModEntityTypes.SPLASHER_ENTITY, Fluids.WATER, SoundEvents.ITEM_BUCKET_EMPTY_FISH, (new Item.Settings()).maxCount(1))
         );
     }
 
     public static void registerMobSpawnEggItems() {
         SPLASHER_SPAWN_EGG = Registry.register(
-                Registry.ITEM,
+                Registries.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "splasher_spawn_egg"),
-                new SpawnEggItem(ModEntityTypes.SPLASHER_ENTITY, 0xaa9cff, 0xdcac55, new Item.Settings().group(ItemGroup.MISC))
+                new SpawnEggItem(ModEntityTypes.SPLASHER_ENTITY, 0xaa9cff, 0xdcac55, new Item.Settings())
         );
 
         GLOW_WORM_SPAWN_EGG = Registry.register(
-                Registry.ITEM,
+                Registries.ITEM,
                 new Identifier(ThrowableFluids.MOD_ID, "glow_worm_spawn_egg"),
-                new SpawnEggItem(ModEntityTypes.GLOW_WORM_ENTITY, 0xa73b3f, 0xff7c1b, new Item.Settings().group(ItemGroup.MISC))
+                new SpawnEggItem(ModEntityTypes.GLOW_WORM_ENTITY, 0xa73b3f, 0xff7c1b, new Item.Settings())
         );
+    }
+
+    public static void addItemsToTabs() {
+        addItemToTab(ItemGroups.FOOD_AND_DRINK, THROWABLE_WATER);
+        addItemToTab(ItemGroups.FOOD_AND_DRINK, THROWABLE_LAVA);
+        addItemToTab(ItemGroups.INGREDIENTS, WORM_ESSENCE);
+        addItemToTab(ItemGroups.INGREDIENTS, SPLASHED_GEL);
+        addItemToTab(ItemGroups.FOOD_AND_DRINK, SPLASHER_FISH);
+        addItemToTab(ItemGroups.TOOLS, SPLASHER_BUCKET);
+
+        addItemToTab(ItemGroups.SPAWN_EGGS, SPLASHER_SPAWN_EGG);
+        addItemToTab(ItemGroups.SPAWN_EGGS, GLOW_WORM_SPAWN_EGG);
+    }
+
+    public static void addItemToTab(ItemGroup group, Item item) {
+        ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
     }
 }

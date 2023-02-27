@@ -11,9 +11,9 @@ import net.minecraft.entity.passive.FishEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 import sirjain.throwable_fluids.items.ModItems;
-import sirjain.throwable_fluids.sounds.ModSoundEvents;
 
 public class SplasherEntity extends FishEntity {
     public SplasherEntity(EntityType<? extends FishEntity> entityType, World world) {
@@ -29,21 +29,16 @@ public class SplasherEntity extends FishEntity {
         this.initFleeGoals();
     }
 
+    @Override
+    protected SoundEvent getFlopSound() {
+        return SoundEvents.ENTITY_COD_FLOP;
+    }
+
     public void initFleeGoals() {
         this.goalSelector.add(1, new FleeEntityGoal<>(this, GuardianEntity.class, 9.0F, 1.4, 1.4));
         this.goalSelector.add(1, new FleeEntityGoal<>(this, ElderGuardianEntity.class, 9.0F, 1.4, 1.4));
         this.goalSelector.add(1, new FleeEntityGoal<>(this, PlayerEntity.class, 9.0F, 1.4, 1.4));
         this.goalSelector.add(1, new FleeEntityGoal<>(this, DrownedEntity.class, 9.0F, 1.4, 1.4));
-    }
-
-    @Override
-    protected SoundEvent getFlopSound() {
-        return ModSoundEvents.SPLASHER_FLOP;
-    }
-
-    @Override
-    protected SoundEvent getDeathSound() {
-        return ModSoundEvents.SPLASHER_DEATH;
     }
 
     public static DefaultAttributeContainer.Builder createSplasherAttributes() {

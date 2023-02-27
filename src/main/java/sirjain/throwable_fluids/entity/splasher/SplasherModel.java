@@ -52,6 +52,7 @@ public class SplasherModel extends EntityModel<SplasherEntity> {
     public void setAngles(SplasherEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
         tail.yaw = MathHelper.cos(animationProgress * 0.3f) * 0.35f;
         tail2.yaw = MathHelper.cos(-15 + animationProgress * 0.3f) * 0.55f;
+        head.yaw = -(MathHelper.cos(animationProgress * 0.3f)  * 0.08f);
     }
 
     @Override

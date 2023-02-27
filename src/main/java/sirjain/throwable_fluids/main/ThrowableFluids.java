@@ -4,7 +4,6 @@ import net.fabricmc.api.ModInitializer;
 import sirjain.throwable_fluids.entity.other.ModEntitySpawn;
 import sirjain.throwable_fluids.entity.other.ModEntityTypes;
 import sirjain.throwable_fluids.items.ModItems;
-import sirjain.throwable_fluids.sounds.ModSoundEvents;
 
 public class ThrowableFluids implements ModInitializer {
 	public static final String MOD_ID = "throwablefluids";
@@ -13,10 +12,10 @@ public class ThrowableFluids implements ModInitializer {
 	public void onInitialize() {
 		ModItems.registerModItems();
 		ModItems.registerMobSpawnEggItems();
+		ModItems.addItemsToTabs();
 		ModEntityTypes.registerEntityRender();
 		ModEntityTypes.registerAttributes();
 		ModEntitySpawn.entitySpawn();
-		ModSoundEvents.registerSoundEvents();
 
 		System.out.println("Hi, "+MOD_ID+"!");
 	}

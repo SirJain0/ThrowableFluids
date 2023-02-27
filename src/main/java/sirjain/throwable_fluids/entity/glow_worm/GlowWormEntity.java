@@ -11,7 +11,6 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import sirjain.throwable_fluids.sounds.ModSoundEvents;
 
 public class GlowWormEntity extends AnimalEntity {
     public GlowWormEntity(EntityType<? extends AnimalEntity> entityType, World world) {
@@ -24,12 +23,6 @@ public class GlowWormEntity extends AnimalEntity {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(0, new WanderAroundGoal(this, 0.6D));
         this.goalSelector.add(1, new EscapeDangerGoal(this, 1.3));
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return ModSoundEvents.GLOW_WORM_DEATH;
     }
 
     @Override
