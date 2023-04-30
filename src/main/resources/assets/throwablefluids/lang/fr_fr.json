@@ -1,20 +1,20 @@
 {
-  "item.throwablefluids.splasher_spawn_egg": "Oeuf d'apparition d'Éclabousseur",
-  "item.throwablefluids.glow_worm_spawn_egg": "Oeuf d'apparition de Ver Luisant",
-  "item.throwablefluids.worm_essence": "Essence de ver",
-  "item.throwablefluids.splashed_gel": "Gel éclaboussures",
-  "item.throwablefluids.splasher_fish": "Poisson éclaboussures",
-  "item.throwablefluids.splasher_bucket": "Seau à éclaboussures",
+  "item.throwablefluids.splasher_spawn_egg": "Oeuf d'Apparition d'Éclabousseur",
+  "item.throwablefluids.glow_worm_spawn_egg": "Oeuf d'Apparition de Ver Luisant",
+  "item.throwablefluids.worm_essence": "Essence de Ver",
+  "item.throwablefluids.splashed_gel": "Gel Éclaboussures",
+  "item.throwablefluids.splasher_fish": "Poisson Éclaboussures",
+  "item.throwablefluids.splasher_bucket": "Seau à Éclaboussures",
 
-  "item.throwablefluids.throwable_lava": "Lave jetable",
-  "item.throwablefluids.throwable_water": "Eau jetable",
+  "item.throwablefluids.throwable_lava": "Lave Jetable",
+  "item.throwablefluids.throwable_water": "Eau Jetable",
 
   "entity.throwablefluids.glow_worm": "Ver Luisant",
   "entity.throwablefluids.splasher": "Éclabousseur",
-  "entity.throwablefluids.throwable_lava": "Lave jetable",
-  "entity.throwablefluids.throwable_water": "Eau jetable",
+  "entity.throwablefluids.throwable_lava": "Lave Jetable",
+  "entity.throwablefluids.throwable_water": "Eau Jetable",
 
   "subtitles.throwablefluids.splasher_flop": "Goutte d'Éclabousseur",
-  "subtitles.throwablefluids.splasher_death": "Éclabousseur mort",
-  "subtitles.throwablefluids.glow_worm_death": "Ver Luisant mort"
+  "subtitles.throwablefluids.splasher_death": "Éclabousseur Mort",
+  "subtitles.throwablefluids.glow_worm_death": "Ver Luisant Mort"
 }
