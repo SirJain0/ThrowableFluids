@@ -25,8 +25,8 @@ public class ThrowableWaterEntity extends ThrownItemEntity {
     // Method is called when colliding with anything
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
-        if (!this.world.isClient) {
-            world.setBlockState(getBlockPos(), fluid, 11);
+        if (!this.getWorld().isClient) {
+            getWorld().setBlockState(getBlockPos(), fluid, 11);
             this.kill();
         }
     }

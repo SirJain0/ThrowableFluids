@@ -5,6 +5,7 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import sirjain.throwable_fluids.entity.other.ModEntityTypes;
@@ -86,7 +87,7 @@ public class ModItems {
         addItemToTab(ItemGroups.SPAWN_EGGS, GLOW_WORM_SPAWN_EGG);
     }
 
-    public static void addItemToTab(ItemGroup group, Item item) {
+    public static void addItemToTab(RegistryKey<ItemGroup> group, Item item) {
         ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
     }
 }

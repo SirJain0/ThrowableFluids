@@ -51,7 +51,7 @@ public class GlowWormEntity extends AnimalEntity {
 
     @Override
     public void tickMovement() {
-        this.world.addParticle(
+        this.getWorld().addParticle(
                 ParticleTypes.FLAME,
                 this.getParticleX(0.2),
                 this.getRandomBodyY(),
