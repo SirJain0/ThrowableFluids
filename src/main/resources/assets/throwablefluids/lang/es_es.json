@@ -1,0 +1,17 @@
+{
+    "item.throwablefluids.splasher_spawn_egg": "Generador De Salpicador",
+    "item.throwablefluids.glow_worm_spawn_egg": "Generador De Gusano Brillante",
+    "item.throwablefluids.worm_essence": "Esencia De Gusano",
+    "item.throwablefluids.splashed_gel": "Gel Salpicado",
+    "item.throwablefluids.splasher_fish": "Pez Salpicador",
+    "item.throwablefluids.splasher_bucket": "Cubo De Salpicador",
+    "item.throwablefluids.throwable_lava": "Lava Lanzable",
+    "item.throwablefluids.throwable_water": "Agua Lanzable",
+    "entity.throwablefluids.glow_worm": "Gusano Brillante",
+    "entity.throwablefluids.splasher": "Salpicador",
+    "subtitles.throwablefluids.splasher_flop": "Sacudidas De Salpicador",
+    "subtitles.throwablefluids.splasher_death": "Muere Salpicador",
+    "subtitles.throwablefluids.glow_worm_death": "Muere Gusano Brillante",
+    "entity.throwablefluids.throwable_lava": "Lava Lanzable",
+    "entity.throwablefluids.throwable_water": "Agua Lanzable"
+}
