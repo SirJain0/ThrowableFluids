@@ -35,27 +35,34 @@ public class ThrowableWaterItem extends Item {
             world.spawnEntity(throwableWaterEntity);
 
             user.incrementStat(Stats.USED.getOrCreateStat(this));
+
             if (!user.getAbilities().creativeMode) {
                 itemStack.decrement(1);
             }
 
-            // Insert random item into the player's inventory - Gold nuggets, prismarine crystals, ender pearls, charcoal, or phantom membranes.
-            if (world.random.nextInt(maxNum) == 0 || world.random.nextInt(maxNum) == 4) {
-                user.getInventory().insertStack(new ItemStack(Items.GOLD_NUGGET));
-            } else if (world.random.nextInt(maxNum) == 1) {
-                user.getInventory().insertStack(new ItemStack(Items.PRISMARINE_CRYSTALS));
-            } else if (world.random.nextInt(maxNum) == 2) {
-                user.getInventory().insertStack(new ItemStack(Items.ENDER_PEARL));
-            } else if (world.random.nextInt(maxNum) == 3) {
-                user.getInventory().insertStack(new ItemStack(Items.CHARCOAL));
-            } else if (world.random.nextInt(maxNum) == 5) {
-                user.getInventory().insertStack(new ItemStack(Items.PHANTOM_MEMBRANE));
+            // Insert random item into the player's inventory.
+            switch (world.random.nextInt(maxNum)) {
+                case 0:
+                case 4:
+                    addItemToInventory(new ItemStack(Items.GOLD_NUGGET), user);
+                case 1:
+                    addItemToInventory(new ItemStack(Items.PRISMARINE_CRYSTALS), user);
+                case 2:
+                    addItemToInventory(new ItemStack(Items.ENDER_PEARL), user);
+                case 3:
+                    addItemToInventory(new ItemStack(Items.CHARCOAL), user);
+                case 5:
+                    addItemToInventory(new ItemStack(Items.PHANTOM_MEMBRANE), user);
             }
 
             user.playerScreenHandler.sendContentUpdates();
         }
 
         return TypedActionResult.success(itemStack, !world.isClient());
+    }
+
+    public void addItemToInventory(ItemStack item, PlayerEntity user) {
+        user.getInventory().insertStack(item);
     }
 
     @Override
