@@ -11,12 +11,12 @@ public class ThrowableFluids implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ModItems.registerModItems();
-		ModItems.addItemsToTabs();
 		ModEntityTypes.registerEntityRender();
 		ModEntityTypes.registerAttributes();
 		ModEntitySpawn.entitySpawn();
 		ModSoundEvents.registerSoundEvents();
+		ModItems.registerModItems();
+		ModItems.addItemsToTabs();
 
 		System.out.println("Hi, "+MOD_ID+"!");
 	}
