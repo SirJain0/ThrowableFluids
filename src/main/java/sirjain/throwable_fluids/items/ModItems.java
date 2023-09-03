@@ -27,14 +27,14 @@ public class ModItems {
     public static Item SPLASHER_SPAWN_EGG;
 
     public static void registerModItems() {
+        SPLASHER_SPAWN_EGG = registerSpawnEgg("splasher_spawn_egg", ModEntityTypes.SPLASHER_ENTITY, 0xaa9cff, 0xdcac55);
+        SPLASHER_SPAWN_EGG = registerSpawnEgg("glow_worm_spawn_egg", ModEntityTypes.GLOW_WORM_ENTITY, 0xa73b3f, 0xff7c1b);
         THROWABLE_WATER = registerCustomItem("throwable_water", new ThrowableWaterItem(new Item.Settings().maxCount(16)));
         THROWABLE_LAVA = registerCustomItem("throwable_lava", new ThrowableLavaItem(new Item.Settings().maxCount(16)));
         WORM_ESSENCE = registerCustomItem("worm_essence", new WormEssenceItem(new Item.Settings().fireproof()));
         SPLASHER_BUCKET = registerCustomItem("splasher_bucket", new EntityBucketItem(ModEntityTypes.SPLASHER_ENTITY, Fluids.WATER, SoundEvents.ITEM_BUCKET_EMPTY_FISH, new Item.Settings().maxCount(1)));
         SPLASHED_GEL = registerBasicItem("splashed_gel", new Item.Settings());
         SPLASHER_FISH = registerBasicItem("splasher_fish", new Item.Settings().food(ModFoodComponents.SPLASHER_FISH));
-        SPLASHER_SPAWN_EGG = registerSpawnEgg("splasher_spawn_egg", ModEntityTypes.SPLASHER_ENTITY, 0xaa9cff, 0xdcac55);
-        SPLASHER_SPAWN_EGG = registerSpawnEgg("glow_worm_spawn_egg", ModEntityTypes.GLOW_WORM_ENTITY, 0xa73b3f, 0xff7c1b);
     }
 
     public static Item registerCustomItem(String id, Item item) {
