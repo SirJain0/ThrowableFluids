@@ -17,14 +17,14 @@ import sirjain.throwable_fluids.items.projectiles.ThrowableWaterItem;
 import sirjain.throwable_fluids.main.ThrowableFluids;
 
 public class ModItems {
-    public static Item SPLASHED_GEL;
+    public static Item THROWABLE_WATER;
+    public static Item THROWABLE_LAVA;
     public static Item WORM_ESSENCE;
+    public static Item SPLASHER_BUCKET;
+    public static Item SPLASHED_GEL;
     public static Item SPLASHER_FISH;
     public static Item GLOW_WORM_SPAWN_EGG;
     public static Item SPLASHER_SPAWN_EGG;
-    public static Item THROWABLE_WATER;
-    public static Item THROWABLE_LAVA;
-    public static Item SPLASHER_BUCKET;
 
     public static void registerModItems() {
         THROWABLE_WATER = registerCustomItem("throwable_water", new ThrowableWaterItem(new Item.Settings().maxCount(16)));
@@ -33,10 +33,6 @@ public class ModItems {
         SPLASHER_BUCKET = registerCustomItem("splasher_bucket", new EntityBucketItem(ModEntityTypes.SPLASHER_ENTITY, Fluids.WATER, SoundEvents.ITEM_BUCKET_EMPTY_FISH, new Item.Settings().maxCount(1)));
         SPLASHED_GEL = registerBasicItem("splashed_gel", new Item.Settings());
         SPLASHER_FISH = registerBasicItem("splasher_fish", new Item.Settings().food(ModFoodComponents.SPLASHER_FISH));
-        registerMobSpawnEggItems();
-    }
-
-    public static void registerMobSpawnEggItems() {
         SPLASHER_SPAWN_EGG = registerSpawnEgg("splasher_spawn_egg", ModEntityTypes.SPLASHER_ENTITY, 0xaa9cff, 0xdcac55);
         SPLASHER_SPAWN_EGG = registerSpawnEgg("glow_worm_spawn_egg", ModEntityTypes.GLOW_WORM_ENTITY, 0xa73b3f, 0xff7c1b);
     }
@@ -66,14 +62,32 @@ public class ModItems {
     }
 
     public static void addItemsToTabs() {
-        addItemToTab(ItemGroups.FOOD_AND_DRINK, THROWABLE_WATER);
-        addItemToTab(ItemGroups.FOOD_AND_DRINK, THROWABLE_LAVA);
-        addItemToTab(ItemGroups.INGREDIENTS, WORM_ESSENCE);
-        addItemToTab(ItemGroups.INGREDIENTS, SPLASHED_GEL);
-        addItemToTab(ItemGroups.FOOD_AND_DRINK, SPLASHER_FISH);
-        addItemToTab(ItemGroups.TOOLS, SPLASHER_BUCKET);
-        addItemToTab(ItemGroups.SPAWN_EGGS, SPLASHER_SPAWN_EGG);
-        addItemToTab(ItemGroups.SPAWN_EGGS, GLOW_WORM_SPAWN_EGG);
+//        addItemToTab(ItemGroups.TOOLS, SPLASHER_BUCKET);
+//        addItemToTab(ItemGroups.SPAWN_EGGS, SPLASHER_SPAWN_EGG);
+//        addItemToTab(ItemGroups.SPAWN_EGGS, GLOW_WORM_SPAWN_EGG);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
+            entries.add(THROWABLE_WATER);
+            entries.add(THROWABLE_LAVA);
+            entries.add(SPLASHER_FISH);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+            entries.add(WORM_ESSENCE);
+            entries.add(SPLASHED_GEL);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+            entries.add(SPLASHED_GEL);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
+            entries.add(SPLASHER_BUCKET);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {
+            entries.add(SPLASHER_SPAWN_EGG);
+            entries.add(GLOW_WORM_SPAWN_EGG);
+        });
     }
 
     public static void addItemToTab(RegistryKey<ItemGroup> group, Item item) {
