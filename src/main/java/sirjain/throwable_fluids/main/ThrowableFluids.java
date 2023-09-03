@@ -12,7 +12,6 @@ public class ThrowableFluids implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
-		ModItems.registerMobSpawnEggItems();
 		ModItems.addItemsToTabs();
 		ModEntityTypes.registerEntityRender();
 		ModEntityTypes.registerAttributes();
