@@ -1,5 +1,6 @@
 # Throwable Fluids
 ![TFGallery](https://user-images.githubusercontent.com/94301223/205997060-25c444e9-aa24-44d2-9ef5-952be6a6a413.png)
+
 ## General Info
 
 Having a water bucket can be extremely handy to pull off an ultimate stunt to impress your friends or even save your life. Having a lava bucket can be an awesome tactic to fend off approaching mobs or defeat your friends in an epic battle. But, what’s better than both of those? Lava and water that’s throwable!
