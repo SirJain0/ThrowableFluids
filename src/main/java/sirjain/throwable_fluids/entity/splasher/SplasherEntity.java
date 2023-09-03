@@ -17,54 +17,51 @@ import sirjain.throwable_fluids.items.ModItems;
 import sirjain.throwable_fluids.sounds.ModSoundEvents;
 
 public class SplasherEntity extends FishEntity {
-    public SplasherEntity(EntityType<? extends FishEntity> entityType, World world) {
-        super(entityType, world);
-    }
+	public SplasherEntity(EntityType<? extends FishEntity> entityType, World world) {
+		super(entityType, world);
+	}
 
-    @Override
-    public void initGoals() {
-        this.goalSelector.add(0, new BreatheAirGoal(this));
-        this.goalSelector.add(0, new MoveIntoWaterGoal(this));
-        this.goalSelector.add(1, new SwimAroundGoal(this, 1.0, 10));
-        this.goalSelector.add(2, new LookAroundGoal(this));
-        this.initFleeGoals();
-    }
+	@Override
+	public void initGoals() {
+		this.goalSelector.add(0, new BreatheAirGoal(this));
+		this.goalSelector.add(0, new MoveIntoWaterGoal(this));
+		this.goalSelector.add(1, new SwimAroundGoal(this, 1.0, 10));
+		this.goalSelector.add(2, new LookAroundGoal(this));
+		this.initFleeGoals();
+	}
 
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return ModSoundEvents.SPLASHER_DEATH;
-    }
+	@Nullable
+	@Override
+	protected SoundEvent getDeathSound() {
+		return ModSoundEvents.SPLASHER_DEATH;
+	}
 
-    @Override
-    protected SoundEvent getFlopSound() {
-        return ModSoundEvents.SPLASHER_FLOP;
-    }
+	@Override
+	protected SoundEvent getFlopSound() {
+		return ModSoundEvents.SPLASHER_FLOP;
+	}
 
-    public void initFleeGoals() {
-        this.goalSelector.add(1, new FleeEntityGoal<>(this, GuardianEntity.class, 9.0F, 1.4, 1.4));
-        this.goalSelector.add(1, new FleeEntityGoal<>(this, ElderGuardianEntity.class, 9.0F, 1.4, 1.4));
-        this.goalSelector.add(1, new FleeEntityGoal<>(this, PlayerEntity.class, 9.0F, 1.4, 1.4));
-        this.goalSelector.add(1, new FleeEntityGoal<>(this, DrownedEntity.class, 9.0F, 1.4, 1.4));
-    }
+	public void initFleeGoals() {
+		this.goalSelector.add(1, new FleeEntityGoal<>(this, GuardianEntity.class, 9.0F, 1.4, 1.4));
+		this.goalSelector.add(1, new FleeEntityGoal<>(this, ElderGuardianEntity.class, 9.0F, 1.4, 1.4));
+		this.goalSelector.add(1, new FleeEntityGoal<>(this, PlayerEntity.class, 9.0F, 1.4, 1.4));
+		this.goalSelector.add(1, new FleeEntityGoal<>(this, DrownedEntity.class, 9.0F, 1.4, 1.4));
+	}
 
-    public static DefaultAttributeContainer.Builder createSplasherAttributes() {
-        return FishEntity
-                .createFishAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 14);
-    }
+	public static DefaultAttributeContainer.Builder createSplasherAttributes() {
+		return FishEntity
+			.createFishAttributes()
+			.add(EntityAttributes.GENERIC_MAX_HEALTH, 14);
+	}
 
-    @Override
-    public ItemStack getBucketItem() {
-        return new ItemStack(ModItems.SPLASHER_BUCKET);
-    }
+	@Override
+	public ItemStack getBucketItem() {
+		return new ItemStack(ModItems.SPLASHER_BUCKET);
+	}
 
-    @Override
-    public void mobTick() {
-        if (this.getHealth() < 8 && this.age % 100 == 0) {
-            this.heal(1);
-        }
-
-        super.mobTick();
-    }
+	@Override
+	public void mobTick() {
+		if (this.getHealth() < 8 && this.age % 100 == 0) this.heal(1);
+		super.mobTick();
+	}
 }
