@@ -11,24 +11,13 @@ import net.minecraft.world.World;
 import sirjain.throwable_fluids.entity.other.ModEntityTypes;
 import sirjain.throwable_fluids.items.ModItems;
 
-public class ThrowableWaterEntity extends ThrownItemEntity {
-    public static final BlockState fluid = Fluids.WATER.getDefaultState().getBlockState();
-
+public class ThrowableWaterEntity extends ThrowableFluidEntity {
     public ThrowableWaterEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super(entityType, world);
     }
 
     public ThrowableWaterEntity(World world, LivingEntity owner) {
-        super(ModEntityTypes.THROWABLE_WATER_ENTITY, owner, world);
-    }
-
-    // Method is called when colliding with anything
-    protected void onCollision(HitResult hitResult) {
-        super.onCollision(hitResult);
-        if (!this.getWorld().isClient) {
-            getWorld().setBlockState(getBlockPos(), fluid, 11);
-            this.kill();
-        }
+        super(ModEntityTypes.THROWABLE_WATER_ENTITY, world, owner);
     }
 
     @Override
@@ -37,7 +26,7 @@ public class ThrowableWaterEntity extends ThrownItemEntity {
     }
 
     @Override
-    protected float getGravity() {
-        return 0.04f;
+    public BlockState getFluid() {
+        return Fluids.WATER.getDefaultState().getBlockState();
     }
 }
