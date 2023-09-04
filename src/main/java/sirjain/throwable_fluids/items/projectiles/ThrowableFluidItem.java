@@ -45,11 +45,6 @@ public abstract class ThrowableFluidItem extends Item {
 		return TypedActionResult.success(itemStack, !world.isClient);
 	}
 
-	@Override
-	public boolean hasGlint(ItemStack stack) {
-		return true;
-	}
-
 	public ThrowableFluidEntity getEntity(World world, LivingEntity user) {
 		return null;
 	}
