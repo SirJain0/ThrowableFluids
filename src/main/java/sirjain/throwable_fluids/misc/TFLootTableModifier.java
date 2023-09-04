@@ -22,6 +22,8 @@ public class TFLootTableModifier {
 
 			appendItemToLootTable(LootTables.UNDERWATER_RUIN_BIG_CHEST, TFItems.THROWABLE_WATER, 0.2F, id, tableBuilder);
 			appendItemToLootTable(LootTables.UNDERWATER_RUIN_SMALL_CHEST, TFItems.THROWABLE_WATER, 0.15F, id, tableBuilder);
+
+			appendItemToLootTable(LootTables.FISHING_FISH_GAMEPLAY, TFItems.SPLASHER_FISH, 0.12F, id, tableBuilder);
 		});
 	}
 
