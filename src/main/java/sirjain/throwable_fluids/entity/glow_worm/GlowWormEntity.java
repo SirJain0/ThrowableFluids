@@ -14,7 +14,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import sirjain.throwable_fluids.sounds.ModSoundEvents;
+import sirjain.throwable_fluids.misc.TFSoundEvents;
 
 public class GlowWormEntity extends AnimalEntity {
 	public GlowWormEntity(EntityType<? extends AnimalEntity> entityType, World world) {
@@ -43,7 +43,7 @@ public class GlowWormEntity extends AnimalEntity {
 	@Nullable
 	@Override
 	protected SoundEvent getDeathSound() {
-		return ModSoundEvents.GLOW_WORM_DEATH;
+		return TFSoundEvents.GLOW_WORM_DEATH;
 	}
 
 	@Override

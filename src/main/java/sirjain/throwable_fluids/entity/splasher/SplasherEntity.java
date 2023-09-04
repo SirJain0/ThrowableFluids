@@ -13,8 +13,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import sirjain.throwable_fluids.items.ModItems;
-import sirjain.throwable_fluids.sounds.ModSoundEvents;
+import sirjain.throwable_fluids.items.TFItems;
+import sirjain.throwable_fluids.misc.TFSoundEvents;
 
 public class SplasherEntity extends FishEntity {
 	public SplasherEntity(EntityType<? extends FishEntity> entityType, World world) {
@@ -33,12 +33,12 @@ public class SplasherEntity extends FishEntity {
 	@Nullable
 	@Override
 	protected SoundEvent getDeathSound() {
-		return ModSoundEvents.SPLASHER_DEATH;
+		return TFSoundEvents.SPLASHER_DEATH;
 	}
 
 	@Override
 	protected SoundEvent getFlopSound() {
-		return ModSoundEvents.SPLASHER_FLOP;
+		return TFSoundEvents.SPLASHER_FLOP;
 	}
 
 	public void initFleeGoals() {
@@ -56,7 +56,7 @@ public class SplasherEntity extends FishEntity {
 
 	@Override
 	public ItemStack getBucketItem() {
-		return new ItemStack(ModItems.SPLASHER_BUCKET);
+		return new ItemStack(TFItems.SPLASHER_BUCKET);
 	}
 
 	@Override

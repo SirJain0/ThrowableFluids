@@ -7,8 +7,8 @@ import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
-import sirjain.throwable_fluids.entity.other.ModEntityTypes;
-import sirjain.throwable_fluids.items.ModItems;
+import sirjain.throwable_fluids.entity.other.TFEntityTypes;
+import sirjain.throwable_fluids.items.TFItems;
 
 public class ThrowableLavaEntity extends ThrowableFluidEntity {
 	public ThrowableLavaEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
@@ -16,12 +16,12 @@ public class ThrowableLavaEntity extends ThrowableFluidEntity {
 	}
 
 	public ThrowableLavaEntity(World world, LivingEntity owner) {
-		super(ModEntityTypes.THROWABLE_LAVA_ENTITY, world, owner);
+		super(TFEntityTypes.THROWABLE_LAVA_ENTITY, world, owner);
 	}
 
 	@Override
 	protected Item getDefaultItem() {
-		return ModItems.THROWABLE_LAVA;
+		return TFItems.THROWABLE_LAVA;
 	}
 
 	@Override

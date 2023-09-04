@@ -1,4 +1,4 @@
-package sirjain.throwable_fluids.sounds;
+package sirjain.throwable_fluids.misc;
 
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -6,7 +6,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import sirjain.throwable_fluids.main.ThrowableFluids;
 
-public class ModSoundEvents {
+public class TFSoundEvents {
 	public static final Identifier FLOP_SOUND_ID = new Identifier(ThrowableFluids.MOD_ID, "splasher_flop");
 	public static final Identifier DEATH_SOUND_ID = new Identifier(ThrowableFluids.MOD_ID, "splasher_death");
 	public static final Identifier GLOW_WORM_DEATH_SOUND_ID = new Identifier(ThrowableFluids.MOD_ID, "glow_worm_death");

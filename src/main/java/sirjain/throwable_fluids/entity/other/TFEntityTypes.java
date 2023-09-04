@@ -24,7 +24,7 @@ import sirjain.throwable_fluids.entity.splasher.SplasherRenderer;
 
 import static sirjain.throwable_fluids.main.ThrowableFluids.MOD_ID;
 
-public class ModEntityTypes {
+public class TFEntityTypes {
 	public static final EntityModelLayer SPLASHER_LAYER = new EntityModelLayer(new Identifier(MOD_ID, "splasher"), "root");
 	public static final EntityType<SplasherEntity> SPLASHER_ENTITY = Registry.register(
 		Registries.ENTITY_TYPE,
@@ -63,18 +63,18 @@ public class ModEntityTypes {
 	);
 
 	public static void registerAttributes() {
-		FabricDefaultAttributeRegistry.register(ModEntityTypes.SPLASHER_ENTITY, SplasherEntity.createSplasherAttributes());
-		FabricDefaultAttributeRegistry.register(ModEntityTypes.GLOW_WORM_ENTITY, GlowWormEntity.createGlowWormAttributes());
+		FabricDefaultAttributeRegistry.register(TFEntityTypes.SPLASHER_ENTITY, SplasherEntity.createSplasherAttributes());
+		FabricDefaultAttributeRegistry.register(TFEntityTypes.GLOW_WORM_ENTITY, GlowWormEntity.createGlowWormAttributes());
 	}
 
 	public static void registerEntityRenderers() {
-		EntityRendererRegistry.register(ModEntityTypes.SPLASHER_ENTITY, SplasherRenderer::new);
+		EntityRendererRegistry.register(TFEntityTypes.SPLASHER_ENTITY, SplasherRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(SPLASHER_LAYER, SplasherModel::getTexturedModelData);
 
-		EntityRendererRegistry.register(ModEntityTypes.GLOW_WORM_ENTITY, GlowWormRenderer::new);
+		EntityRendererRegistry.register(TFEntityTypes.GLOW_WORM_ENTITY, GlowWormRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(GLOW_WORM_LAYER, GlowWormModel::getTexturedModelData);
 
-		EntityRendererRegistry.register(ModEntityTypes.THROWABLE_WATER_ENTITY, FlyingItemEntityRenderer::new);
-		EntityRendererRegistry.register(ModEntityTypes.THROWABLE_LAVA_ENTITY, FlyingItemEntityRenderer::new);
+		EntityRendererRegistry.register(TFEntityTypes.THROWABLE_WATER_ENTITY, FlyingItemEntityRenderer::new);
+		EntityRendererRegistry.register(TFEntityTypes.THROWABLE_LAVA_ENTITY, FlyingItemEntityRenderer::new);
 	}
 }

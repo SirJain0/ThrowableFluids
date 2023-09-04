@@ -4,7 +4,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
 
-public class ModFoodComponents {
+public class TFFoodComponents {
 	public static final FoodComponent SPLASHER_FISH = new FoodComponent.Builder()
 		.saturationModifier(1.1f)
 		.hunger(2)
