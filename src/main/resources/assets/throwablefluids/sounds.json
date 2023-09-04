@@ -5,16 +5,16 @@
       "throwablefluids:splasher_flop"
     ]
   },
-  "splasher_death": {
-    "subtitle": "subtitles.throwablefluids.splasher_death",
+  "splasher_ambient": {
+    "subtitle": "subtitles.throwablefluids.splasher_ambient",
     "sounds": [
-      "throwablefluids:splasher_death"
+      "minecraft:entity_cod_ambient"
     ]
   },
-  "glow_worm_death": {
-    "subtitle": "subtitles.throwablefluids.glow_worm_death",
+  "glow_worm_ambient": {
+    "subtitle": "subtitles.throwablefluids.glow_worm_ambient",
     "sounds": [
-      "throwablefluids:glow_worm_death"
+      "minecraft:entity_silverfish_ambient"
     ]
   }
 }

@@ -40,12 +40,6 @@ public class GlowWormEntity extends AnimalEntity {
 		if (this.age % 110 == 0) this.heal(1);
 	}
 
-	@Nullable
-	@Override
-	protected SoundEvent getDeathSound() {
-		return TFSoundEvents.GLOW_WORM_DEATH;
-	}
-
 	@Override
 	public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
 		return null;

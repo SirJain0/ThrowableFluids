@@ -30,12 +30,6 @@ public class SplasherEntity extends FishEntity {
 		this.initFleeGoals();
 	}
 
-	@Nullable
-	@Override
-	protected SoundEvent getDeathSound() {
-		return TFSoundEvents.SPLASHER_DEATH;
-	}
-
 	@Override
 	protected SoundEvent getFlopSound() {
 		return TFSoundEvents.SPLASHER_FLOP;
