@@ -1,9 +1,18 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    { "item": "throwablefluids:splashed_gel" },
-    { "item": "minecraft:water_bucket" }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#E#",
+    " # "
   ],
+  "key": {
+    "#": {
+      "item": "throwablefluids:splashed_gel"
+    },
+    "E": {
+      "item": "minecraft:water_bucket"
+    }
+  },
   "result": {
     "item": "throwablefluids:throwable_water",
     "count": 3
