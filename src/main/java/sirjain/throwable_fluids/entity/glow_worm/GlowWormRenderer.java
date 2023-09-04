@@ -1,8 +1,12 @@
 package sirjain.throwable_fluids.entity.glow_worm;
 
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
+import org.jetbrains.annotations.Nullable;
 import sirjain.throwable_fluids.entity.other.GlowWormEmissiveTextureFeature;
 import sirjain.throwable_fluids.entity.other.ModEntityTypes;
 import sirjain.throwable_fluids.main.ThrowableFluids;
@@ -18,5 +22,11 @@ public class GlowWormRenderer extends MobEntityRenderer<GlowWormEntity, GlowWorm
 	@Override
 	public Identifier getTexture(GlowWormEntity entity) {
 		return TEXTURE;
+	}
+
+	@Nullable
+	@Override
+	protected RenderLayer getRenderLayer(GlowWormEntity entity, boolean showBody, boolean translucent, boolean showOutline) {
+		return super.getRenderLayer(entity, showBody, true, showOutline);
 	}
 }
