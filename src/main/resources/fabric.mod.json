@@ -1,37 +1,33 @@
 {
-  "schemaVersion": 1,
-  "id": "throwablefluids",
-  "version": "${version}",
-
-  "name": "Throwable Fluids",
-  "description": "Adds throwable lava and water, and more!",
-  "authors": [
-    "SirJain"
-  ],
-  "contact": {
-    "twitter": "https://twitter.com/SirJain2",
-    "discord": "https://discord.gg/wM4CKTbFVN",
-    "sources": "https://github.com/SirJain0/ThrowableFluids",
-    "issues": "https://github.com/SirJain0/ThrowableFluids/issues"
-  },
-
-  "license": "CC0-1.0",
-  "icon": "assets/throwablefluids/tf_logo.png",
-
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "sirjain.throwable_fluids.main.ThrowableFluids"
-    ]
-  },
-
-  "depends": {
-    "fabricloader": ">=0.14.9",
-    "fabric-api": "*",
-    "minecraft": ">=1.20",
-    "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
-  }
+	"schemaVersion": 1,
+	"id": "throwablefluids",
+	"version": "${version}",
+	"name": "Throwable Fluids",
+	"description": "Adds throwable lava and water, and more!",
+	"authors": [
+		"SirJain"
+	],
+	"contact": {
+		"twitter": "https://twitter.com/SirJain2",
+		"discord": "https://discord.gg/wM4CKTbFVN",
+		"sources": "https://github.com/SirJain0/ThrowableFluids",
+		"issues": "https://github.com/SirJain0/ThrowableFluids/issues"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/throwablefluids/tf_logo.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"sirjain.throwable_fluids.main.ThrowableFluids"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.14.9",
+		"fabric-api": "*",
+		"minecraft": ">=1.20",
+		"java": ">=17"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
 }
