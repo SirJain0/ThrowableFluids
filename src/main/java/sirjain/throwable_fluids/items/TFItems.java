@@ -39,10 +39,9 @@ public class TFItems {
 	public static void addItemsToTabs() {
 		addItemToTab(ItemGroups.FOOD_AND_DRINK, THROWABLE_WATER);
 		addItemToTab(ItemGroups.FOOD_AND_DRINK, THROWABLE_LAVA);
-		addItemToTab(ItemGroups.INGREDIENTS, WORM_ESSENCE);
-		addItemToTab(ItemGroups.INGREDIENTS, SPLASHED_GEL);
-		addItemToTab(ItemGroups.FOOD_AND_DRINK, SPLASHER_FISH);
-		addItemToTab(ItemGroups.TOOLS, SPLASHER_BUCKET);
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> entries.addAfter(Items.GHAST_TEAR.getDefaultStack(), WORM_ESSENCE.getDefaultStack()));
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> entries.addAfter(WORM_ESSENCE.getDefaultStack(), SPLASHED_GEL.getDefaultStack()));
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> entries.addAfter(Items.TROPICAL_FISH.getDefaultStack(), SPLASHER_FISH.getDefaultStack()));
 		addItemToTab(ItemGroups.SPAWN_EGGS, SPLASHER_SPAWN_EGG);
 		addItemToTab(ItemGroups.SPAWN_EGGS, GLOW_WORM_SPAWN_EGG);
 	}
