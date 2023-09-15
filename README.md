@@ -11,14 +11,18 @@ Throwable Fluids adds throwable lava and water items. While this is the primary 
 
 This mod adds two new entities:
 
-- Splasher - an angelic fish found in the most common water bodies in Minecraft, including the Frozen River, River, and Ocean. This mob drops splashed gel, used for crafting throwable water, and splasher fish, a delicious delicacy!
-Glow Worm - A silver-fish like mob, only less annoying because it spawns cool particles and doesn’t attack you. These mobs are immune to lava and fire. When killed, they will drop worm essence, which is used for crafting throwable lava.
+- Splasher: An angelic fish found in the most common water bodies in Minecraft, including the Frozen River, River, and Ocean. This mob drops splashed gel, used for crafting throwable water, and splasher fish, a delicious delicacy!
+- Glow Worm: A silver-fish like mob, only less annoying because it spawns cool particles and doesn’t attack you. These mobs are immune to lava and fire. When killed, they will drop worm essence, which is used for crafting throwable lava.
+
 The two advancements this mod adds are:
 
-- Go With The Flow - achieved when player obtains throwable water
-Hot Sauce - achieved when player obtains throwable lava
+- Go With The Flow: Achieved when player obtains throwable water
+- Hot Sauce: Achieved when player obtains throwable lava
 Don’t know how to craft the throwable projectiles? See the images section of the mod. Happy surviving, or trolling, or showing who’s boss, or whatever it is you’ll do!
 
-Note: This mod only works with Fabric API and not Forge.
+**Note:** This mod only works with Fabric API and not Forge.
 
+## Links
+Translation Link: https://poeditor.com/join/project/M4owFigkSJ <br>
+Discord server: https://discord.gg/wM4CKTbFVN <br>
 Mod link: https://www.curseforge.com/minecraft/mc-mods/throwable-fluids
