@@ -1,12 +1,16 @@
 package sirjain.throwable_fluids.entity.projectiles;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
+import xaero.pac.common.server.api.OpenPACServerAPI;
 
 public abstract class ThrowableFluidEntity extends ThrownItemEntity {
 	public ThrowableFluidEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
@@ -19,13 +23,21 @@ public abstract class ThrowableFluidEntity extends ThrownItemEntity {
 
 	// Method is called when colliding with anything
 	protected void onCollision(HitResult hitResult) {
-		super.onCollision(hitResult);
 		World world = this.getWorld();
+		MinecraftServer server = this.getWorld().getServer();
 
-		if (!world.isClient) {
-			world.setBlockState(getBlockPos(), getFluid(), 11);
-			this.kill();
-		}
+//		if (server != null) {
+			boolean canPlace = OpenPACServerAPI.get(server)
+				.getChunkProtection()
+				.onEntityPlaceBlock(this, (ServerWorld) world, this.getBlockPos());
+
+//			if (canPlace) {
+				world.setBlockState(getBlockPos(), getFluid(), Block.NOTIFY_LISTENERS);
+//			}
+//		}
+
+		super.onCollision(hitResult);
+		this.kill();
 	}
 
 	@Override
