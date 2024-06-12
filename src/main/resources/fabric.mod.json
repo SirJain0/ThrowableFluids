@@ -19,6 +19,9 @@
 	"entrypoints": {
 		"main": [
 			"sirjain.throwable_fluids.ThrowableFluids"
+		],
+		"client": [
+			"sirjain.throwable_fluids.client.ThrowableFluidsClient"
 		]
 	},
 	"depends": {

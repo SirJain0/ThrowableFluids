@@ -27,14 +27,28 @@ public abstract class ThrowableFluidEntity extends ThrownItemEntity {
 		MinecraftServer server = this.getWorld().getServer();
 
 //		if (server != null) {
-			boolean canPlace = OpenPACServerAPI.get(server)
-				.getChunkProtection()
-				.onEntityPlaceBlock(this, (ServerWorld) world, this.getBlockPos());
+
 
 //			if (canPlace) {
 				world.setBlockState(getBlockPos(), getFluid(), Block.NOTIFY_LISTENERS);
 //			}
 //		}
+
+		if (!world.isClient) {
+			if (world.getServer() != null) {
+				boolean canPlace = OpenPACServerAPI.get(world.getServer())
+					.getChunkProtection()
+					.onEntityPlaceBlock(this, (ServerWorld) world, this.getBlockPos());
+
+				if (canPlace) {
+					world.setBlockState(getBlockPos(), getFluid(), Block.NOTIFY_LISTENERS);
+				}
+			}
+
+			if (world.getServer() == null) {
+				world.setBlockState(getBlockPos(), getFluid(), Block.NOTIFY_LISTENERS);
+			}
+		}
 
 		super.onCollision(hitResult);
 		this.kill();
@@ -47,7 +61,7 @@ public abstract class ThrowableFluidEntity extends ThrownItemEntity {
 
 	@Override
 	protected float getGravity() {
-		return 0.04f;
+		return 0.1f;
 	}
 
 	public BlockState getFluid() {

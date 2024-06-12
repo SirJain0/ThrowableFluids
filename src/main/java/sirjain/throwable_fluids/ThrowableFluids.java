@@ -13,7 +13,6 @@ public class ThrowableFluids implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ThrowableFluidsEntityTypes.registerEntityRenderers();
 		ThrowableFluidsItems.registerModItems();
 		ThrowableFluidsItems.addItemsToTabs();
 		TFLootTableModifier.initLootTables();

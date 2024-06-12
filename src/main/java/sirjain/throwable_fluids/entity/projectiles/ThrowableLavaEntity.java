@@ -28,4 +28,9 @@ public class ThrowableLavaEntity extends ThrowableFluidEntity {
 	public BlockState getFluid() {
 		return Fluids.LAVA.getDefaultState().getBlockState();
 	}
+
+	@Override
+	protected float getGravity() {
+		return 0.12f;
+	}
 }
