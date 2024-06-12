@@ -24,15 +24,6 @@ public abstract class ThrowableFluidEntity extends ThrownItemEntity {
 	// Method is called when colliding with anything
 	protected void onCollision(HitResult hitResult) {
 		World world = this.getWorld();
-		MinecraftServer server = this.getWorld().getServer();
-
-//		if (server != null) {
-
-
-//			if (canPlace) {
-				world.setBlockState(getBlockPos(), getFluid(), Block.NOTIFY_LISTENERS);
-//			}
-//		}
 
 		if (!world.isClient) {
 			if (world.getServer() != null) {
