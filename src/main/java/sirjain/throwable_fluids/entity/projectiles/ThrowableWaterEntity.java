@@ -7,7 +7,7 @@ import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
-import sirjain.throwable_fluids.entity.other.TFEntityTypes;
+import sirjain.throwable_fluids.entity.TFEntityTypes;
 import sirjain.throwable_fluids.items.TFItems;
 
 public class ThrowableWaterEntity extends ThrowableFluidEntity {
