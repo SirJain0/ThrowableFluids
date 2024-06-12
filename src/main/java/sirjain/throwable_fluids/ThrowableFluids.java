@@ -3,8 +3,8 @@ package sirjain.throwable_fluids;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sirjain.throwable_fluids.entity.TFEntityTypes;
-import sirjain.throwable_fluids.items.TFItems;
+import sirjain.throwable_fluids.entity.ThrowableFluidsEntityTypes;
+import sirjain.throwable_fluids.items.ThrowableFluidsItems;
 import sirjain.throwable_fluids.misc.TFLootTableModifier;
 
 public class ThrowableFluids implements ModInitializer {
@@ -13,9 +13,9 @@ public class ThrowableFluids implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		TFEntityTypes.registerEntityRenderers();
-		TFItems.registerModItems();
-		TFItems.addItemsToTabs();
+		ThrowableFluidsEntityTypes.registerEntityRenderers();
+		ThrowableFluidsItems.registerModItems();
+		ThrowableFluidsItems.addItemsToTabs();
 		TFLootTableModifier.initLootTables();
 
 		LOGGER.info("Initializing Throwable Fluids!");

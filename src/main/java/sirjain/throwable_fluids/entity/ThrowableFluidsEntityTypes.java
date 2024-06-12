@@ -15,7 +15,7 @@ import sirjain.throwable_fluids.entity.projectiles.ThrowableWaterEntity;
 
 import static sirjain.throwable_fluids.ThrowableFluids.MOD_ID;
 
-public class TFEntityTypes {
+public class ThrowableFluidsEntityTypes {
 	public static final EntityType<ThrowableWaterEntity> THROWABLE_WATER_ENTITY = Registry.register(
 		Registries.ENTITY_TYPE,
 		new Identifier(MOD_ID, "throwable_water"),
@@ -35,7 +35,7 @@ public class TFEntityTypes {
 	);
 
 	public static void registerEntityRenderers() {
-		EntityRendererRegistry.register(TFEntityTypes.THROWABLE_WATER_ENTITY, FlyingItemEntityRenderer::new);
-		EntityRendererRegistry.register(TFEntityTypes.THROWABLE_LAVA_ENTITY, FlyingItemEntityRenderer::new);
+		EntityRendererRegistry.register(ThrowableFluidsEntityTypes.THROWABLE_WATER_ENTITY, FlyingItemEntityRenderer::new);
+		EntityRendererRegistry.register(ThrowableFluidsEntityTypes.THROWABLE_LAVA_ENTITY, FlyingItemEntityRenderer::new);
 	}
 }

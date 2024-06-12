@@ -45,7 +45,5 @@ public abstract class ThrowableFluidItem extends Item {
 		return TypedActionResult.success(itemStack, !world.isClient);
 	}
 
-	public ThrowableFluidEntity getEntity(World world, LivingEntity user) {
-		return null;
-	}
+	abstract public ThrowableFluidEntity getEntity(World world, LivingEntity user);
 }
