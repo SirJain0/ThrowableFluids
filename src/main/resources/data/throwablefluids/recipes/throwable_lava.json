@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" # ",
+		"#E#",
+		" # "
+	],
+	"key": {
+		"#": {
+			"item": "aquaticplus:exploding_magma"
+		},
+		"E": {
+			"item": "minecraft:lava_bucket"
+		}
+	},
+	"result": {
+		"item": "throwablefluids:throwable_lava",
+		"count": 3
+	}
+}
