@@ -26,19 +26,22 @@ public abstract class ThrowableFluidEntity extends ThrownItemEntity {
 		World world = this.getWorld();
 
 		if (!world.isClient) {
-			if (world.getServer() != null) {
-				boolean canPlace = OpenPACServerAPI.get(world.getServer())
-					.getChunkProtection()
-					.onEntityPlaceBlock(this, (ServerWorld) world, this.getBlockPos());
+//			if (world.getServer() != null) {
+//				boolean canPlace = OpenPACServerAPI.get(world.getServer())
+//					.getChunkProtection()
+//					.onEntityPlaceBlock(this, (ServerWorld) world, this.getBlockPos());
+//
+//				if (canPlace) {
+//					world.setBlockState(getBlockPos(), getFluid(), Block.NOTIFY_LISTENERS);
+//				}
+//			}
+//
+//			if (world.getServer() == null) {
+//				world.setBlockState(getBlockPos(), getFluid(), Block.NOTIFY_LISTENERS);
+//			}
 
-				if (canPlace) {
-					world.setBlockState(getBlockPos(), getFluid(), Block.NOTIFY_LISTENERS);
-				}
-			}
-
-			if (world.getServer() == null) {
-				world.setBlockState(getBlockPos(), getFluid(), Block.NOTIFY_LISTENERS);
-			}
+			world.setBlockState(getBlockPos(), getFluid(), Block.NOTIFY_LISTENERS);
+			this.kill();
 		}
 
 		super.onCollision(hitResult);

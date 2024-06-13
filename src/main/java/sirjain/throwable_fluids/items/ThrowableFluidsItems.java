@@ -14,20 +14,17 @@ public class ThrowableFluidsItems {
 	public static Item THROWABLE_WATER;
 	public static Item THROWABLE_LAVA;
 	public static Item EXPLODING_MAGMA;
-	public static Item SPLASHED_GEL;
 
 	public static void registerModItems() {
 		THROWABLE_WATER = registerCustomItem("throwable_water", new ThrowableWaterItem(new Item.Settings().maxCount(16)));
 		THROWABLE_LAVA = registerCustomItem("throwable_lava", new ThrowableLavaItem(new Item.Settings().maxCount(16)));
-		EXPLODING_MAGMA = registerCustomItem("worm_essence", new Item(new Item.Settings().fireproof()));
-		SPLASHED_GEL = registerBasicItem("splashed_gel", new Item.Settings());
+		EXPLODING_MAGMA = registerBasicItem("exploding_magma", new Item.Settings().fireproof());
 	}
 
 	public static void addItemsToTabs() {
 		addItemToTab(ItemGroups.FOOD_AND_DRINK, THROWABLE_WATER);
 		addItemToTab(ItemGroups.FOOD_AND_DRINK, THROWABLE_LAVA);
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> entries.addAfter(Items.GHAST_TEAR.getDefaultStack(), EXPLODING_MAGMA.getDefaultStack()));
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> entries.addAfter(EXPLODING_MAGMA.getDefaultStack(), SPLASHED_GEL.getDefaultStack()));
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> entries.addAfter(Items.MAGMA_CREAM.getDefaultStack(), EXPLODING_MAGMA.getDefaultStack()));
 	}
 
 	public static Item registerCustomItem(String id, Item item) {
