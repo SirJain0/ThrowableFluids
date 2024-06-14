@@ -33,9 +33,4 @@ public class ThrowableFluidsEntityTypes {
 			.trackRangeBlocks(8).trackedUpdateRate(10)
 			.build()
 	);
-
-	public static void registerEntityRenderers() {
-		EntityRendererRegistry.register(ThrowableFluidsEntityTypes.THROWABLE_WATER_ENTITY, FlyingItemEntityRenderer::new);
-		EntityRendererRegistry.register(ThrowableFluidsEntityTypes.THROWABLE_LAVA_ENTITY, FlyingItemEntityRenderer::new);
-	}
 }
