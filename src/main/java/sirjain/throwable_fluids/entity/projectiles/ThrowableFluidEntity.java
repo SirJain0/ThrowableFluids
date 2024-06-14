@@ -6,11 +6,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
-import xaero.pac.common.server.api.OpenPACServerAPI;
 
 public abstract class ThrowableFluidEntity extends ThrownItemEntity {
 	public ThrowableFluidEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
