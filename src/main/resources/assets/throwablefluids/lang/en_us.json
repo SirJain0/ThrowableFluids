@@ -1,20 +1,11 @@
 {
   "item.throwablefluids.splasher_spawn_egg": "Splasher Spawn Egg",
   "item.throwablefluids.glow_worm_spawn_egg": "Glow Worm Spawn Egg",
-  "item.throwablefluids.worm_essence": "Worm Essence",
-  "item.throwablefluids.splashed_gel": "Splashed Gel",
-  "item.throwablefluids.splasher_fish": "Splasher Fish",
-  "item.throwablefluids.splasher_bucket": "Splasher Bucket",
+  "item.throwablefluids.exploding_magma": "Exploding Magma",
 
   "item.throwablefluids.throwable_lava": "Throwable Lava",
   "item.throwablefluids.throwable_water": "Throwable Water",
 
-  "entity.throwablefluids.glow_worm": "Glow Worm",
-  "entity.throwablefluids.splasher": "Splasher",
   "entity.throwablefluids.throwable_lava": "Throwable Lava",
-  "entity.throwablefluids.throwable_water": "Throwable Water",
-
-  "subtitles.throwablefluids.splasher_flop": "Splasher flops",
-  "subtitles.throwablefluids.splasher_death": "Splasher dies",
-  "subtitles.throwablefluids.glow_worm_death": "Glow Worm dies"
+  "entity.throwablefluids.throwable_water": "Throwable Water"
 }
