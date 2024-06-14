@@ -13,7 +13,7 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
 import sirjain.throwable_fluids.items.ThrowableFluidsItems;
 
-public class TFLootTableModifier {
+public class ThrowableFluidsLootTableModifier {
 	public static void initLootTables() {
 		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
 			appendItemToLootTable(LootTables.NETHER_BRIDGE_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.2f, id, tableBuilder);

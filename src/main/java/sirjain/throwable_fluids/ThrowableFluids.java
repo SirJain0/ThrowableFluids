@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sirjain.throwable_fluids.entity.ThrowableFluidsEntityTypes;
 import sirjain.throwable_fluids.items.ThrowableFluidsItems;
-import sirjain.throwable_fluids.misc.TFLootTableModifier;
+import sirjain.throwable_fluids.misc.ThrowableFluidsLootTableModifier;
 
 public class ThrowableFluids implements ModInitializer {
 	public static final String MOD_ID = "throwablefluids";
@@ -16,7 +16,7 @@ public class ThrowableFluids implements ModInitializer {
 		ThrowableFluidsEntityTypes.registerEntityTypes();
 		ThrowableFluidsItems.registerModItems();
 		ThrowableFluidsItems.addItemsToTabs();
-		TFLootTableModifier.initLootTables();
+		ThrowableFluidsLootTableModifier.initLootTables();
 
 		LOGGER.info("Initializing Throwable Fluids!");
 	}
