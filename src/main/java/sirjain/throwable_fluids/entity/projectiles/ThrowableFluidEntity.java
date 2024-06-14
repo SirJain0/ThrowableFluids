@@ -45,17 +45,12 @@ public abstract class ThrowableFluidEntity extends ThrownItemEntity {
 		this.kill();
 	}
 
-	@Override
-	protected Item getDefaultItem() {
-		return null;
-	}
+	@Override abstract protected Item getDefaultItem();
 
 	@Override
 	protected float getGravity() {
 		return 0.1f;
 	}
 
-	public BlockState getFluid() {
-		return null;
-	}
+	abstract public BlockState getFluid();
 }

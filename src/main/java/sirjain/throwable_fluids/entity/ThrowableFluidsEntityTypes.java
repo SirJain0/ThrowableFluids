@@ -25,10 +25,10 @@ public class ThrowableFluidsEntityTypes {
 			.build()
 	);
 
-	public static final EntityType<ThrowableFluidEntity> THROWABLE_LAVA_ENTITY = Registry.register(
+	public static final EntityType<ThrowableLavaEntity> THROWABLE_LAVA_ENTITY = Registry.register(
 		Registries.ENTITY_TYPE,
 		new Identifier(MOD_ID, "throwable_lava"),
-		FabricEntityTypeBuilder.<ThrowableFluidEntity>create(SpawnGroup.MISC, ThrowableLavaEntity::new)
+		FabricEntityTypeBuilder.<ThrowableLavaEntity>create(SpawnGroup.MISC, ThrowableLavaEntity::new)
 			.dimensions(EntityDimensions.fixed(0.25F, 0.25F)) // In-game dimensions
 			.trackRangeBlocks(8).trackedUpdateRate(10)
 			.build()
