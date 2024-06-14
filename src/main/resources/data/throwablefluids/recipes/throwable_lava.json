@@ -7,7 +7,7 @@
 	],
 	"key": {
 		"#": {
-			"item": "aquaticplus:exploding_magma"
+			"item": "throwablefluids:exploding_magma"
 		},
 		"E": {
 			"item": "minecraft:lava_bucket"
