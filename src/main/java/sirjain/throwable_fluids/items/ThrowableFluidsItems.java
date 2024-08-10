@@ -30,7 +30,7 @@ public class ThrowableFluidsItems {
 	public static Item registerCustomItem(String id, Item item) {
 		return Registry.register(
 			Registries.ITEM,
-			new Identifier(ThrowableFluids.MOD_ID, id),
+			Identifier.of(ThrowableFluids.MOD_ID, id),
 			item
 		);
 	}
@@ -38,7 +38,7 @@ public class ThrowableFluidsItems {
 	public static Item registerBasicItem(String id, Item.Settings settings) {
 		return Registry.register(
 			Registries.ITEM,
-			new Identifier(ThrowableFluids.MOD_ID, id),
+			Identifier.of(ThrowableFluids.MOD_ID, id),
 			new Item(settings)
 		);
 	}

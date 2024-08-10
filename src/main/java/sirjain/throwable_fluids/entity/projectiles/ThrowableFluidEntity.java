@@ -48,8 +48,8 @@ public abstract class ThrowableFluidEntity extends ThrownItemEntity {
 	@Override abstract protected Item getDefaultItem();
 
 	@Override
-	protected float getGravity() {
-		return 0.1f;
+	protected double getGravity() {
+		return 0.1d;
 	}
 
 	abstract public BlockState getFluid();

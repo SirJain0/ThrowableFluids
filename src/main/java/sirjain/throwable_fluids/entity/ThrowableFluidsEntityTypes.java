@@ -20,19 +20,19 @@ public class ThrowableFluidsEntityTypes {
 	public static void registerEntityTypes() {
 		THROWABLE_WATER_ENTITY = Registry.register(
 			Registries.ENTITY_TYPE,
-			new Identifier(MOD_ID, "throwable_water"),
-			FabricEntityTypeBuilder.<ThrowableWaterEntity>create(SpawnGroup.MISC, ThrowableWaterEntity::new)
-				.dimensions(EntityDimensions.fixed(0.25F, 0.25F))
-				.trackRangeBlocks(8).trackedUpdateRate(10)
+			Identifier.of(MOD_ID, "throwable_water"),
+			EntityType.Builder.<ThrowableWaterEntity>create(ThrowableWaterEntity::new, SpawnGroup.MISC)
+				.dimensions(0.25F, 0.25F)
+				.maxTrackingRange(8).trackingTickInterval(10)
 				.build()
 		);
 
 		THROWABLE_LAVA_ENTITY = Registry.register(
 			Registries.ENTITY_TYPE,
-			new Identifier(MOD_ID, "throwable_lava"),
-			FabricEntityTypeBuilder.<ThrowableLavaEntity>create(SpawnGroup.MISC, ThrowableLavaEntity::new)
-				.dimensions(EntityDimensions.fixed(0.25F, 0.25F))
-				.trackRangeBlocks(8).trackedUpdateRate(10)
+			Identifier.of(MOD_ID, "throwable_lava"),
+			EntityType.Builder.<ThrowableLavaEntity>create(ThrowableLavaEntity::new, SpawnGroup.MISC)
+				.dimensions(0.25F, 0.25F)
+				.maxTrackingRange(8).trackingTickInterval(10)
 				.build()
 		);
 	}

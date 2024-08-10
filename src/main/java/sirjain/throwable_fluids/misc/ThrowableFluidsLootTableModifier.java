@@ -15,14 +15,14 @@ import sirjain.throwable_fluids.items.ThrowableFluidsItems;
 
 public class ThrowableFluidsLootTableModifier {
 	public static void initLootTables() {
-		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-			appendItemToLootTable(LootTables.NETHER_BRIDGE_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.2f, id, tableBuilder);
-			appendItemToLootTable(LootTables.STRONGHOLD_CORRIDOR_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.15f, id, tableBuilder);
-			appendItemToLootTable(LootTables.STRONGHOLD_CROSSING_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.15F, id, tableBuilder);
-
-			appendItemToLootTable(LootTables.UNDERWATER_RUIN_BIG_CHEST, ThrowableFluidsItems.THROWABLE_WATER, 0.2F, id, tableBuilder);
-			appendItemToLootTable(LootTables.UNDERWATER_RUIN_SMALL_CHEST, ThrowableFluidsItems.THROWABLE_WATER, 0.15F, id, tableBuilder);
-		});
+//		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+//			appendItemToLootTable(LootTables.NETHER_BRIDGE_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.2f, id, tableBuilder);
+//			appendItemToLootTable(LootTables.STRONGHOLD_CORRIDOR_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.15f, id, tableBuilder);
+//			appendItemToLootTable(LootTables.STRONGHOLD_CROSSING_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.15F, id, tableBuilder);
+//
+//			appendItemToLootTable(LootTables.UNDERWATER_RUIN_BIG_CHEST, ThrowableFluidsItems.THROWABLE_WATER, 0.2F, id, tableBuilder);
+//			appendItemToLootTable(LootTables.UNDERWATER_RUIN_SMALL_CHEST, ThrowableFluidsItems.THROWABLE_WATER, 0.15F, id, tableBuilder);
+//		});
 	}
 
 	public static void appendItemToLootTable(Identifier target, Item item, float chance, Identifier id, FabricLootTableBuilder tableBuilder) {

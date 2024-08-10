@@ -30,7 +30,7 @@ public class ThrowableLavaEntity extends ThrowableFluidEntity {
 	}
 
 	@Override
-	protected float getGravity() {
-		return 0.12f;
+	protected double getGravity() {
+		return 0.12d;
 	}
 }
