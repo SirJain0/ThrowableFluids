@@ -18,7 +18,6 @@ public class ThrowableFluidsLootTableModifier {
 			if (key == LootTables.NETHER_BRIDGE_CHEST) appendItemToLootTable(ThrowableFluidsItems.THROWABLE_LAVA, 0.2f, tableBuilder);
 			else if (key == LootTables.STRONGHOLD_CORRIDOR_CHEST) appendItemToLootTable(ThrowableFluidsItems.THROWABLE_LAVA, 0.15f, tableBuilder);
 			else if (key == LootTables.STRONGHOLD_CROSSING_CHEST) appendItemToLootTable(ThrowableFluidsItems.THROWABLE_LAVA, 0.15f, tableBuilder);
-			else if (key == LootTables.VILLAGE_PLAINS_CHEST) appendItemToLootTable(ThrowableFluidsItems.THROWABLE_LAVA, 1, tableBuilder);
 
 			if (key == LootTables.UNDERWATER_RUIN_BIG_CHEST) appendItemToLootTable(ThrowableFluidsItems.THROWABLE_LAVA, 0.2f, tableBuilder);
 			else if (key == LootTables.UNDERWATER_RUIN_SMALL_CHEST) appendItemToLootTable(ThrowableFluidsItems.THROWABLE_LAVA, 0.2f, tableBuilder);
