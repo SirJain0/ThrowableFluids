@@ -1,22 +1,26 @@
 package sirjain.throwable_fluids.misc;
 
-import net.fabricmc.fabric.api.loot.v2.FabricLootTableBuilder;
+import net.fabricmc.fabric.api.loot.v3.FabricLootTableBuilder;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
+import net.fabricmc.fabric.api.loot.v3.LootTableSource;
 import net.minecraft.item.Item;
 import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import sirjain.throwable_fluids.items.ThrowableFluidsItems;
 
 public class ThrowableFluidsLootTableModifier {
 	public static void initLootTables() {
-		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-			appendItemToLootTable(LootTables.NETHER_BRIDGE_CHEST.getRegistry(), ThrowableFluidsItems.THROWABLE_LAVA, 0.2f, id, tableBuilder);
+		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder) -> {
+			appendItemToLootTable(LootTables.NETHER_BRIDGE_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.2f, id, tableBuilder);
 //			appendItemToLootTable(LootTables.STRONGHOLD_CORRIDOR_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.15f, id, tableBuilder);
 //			appendItemToLootTable(LootTables.STRONGHOLD_CROSSING_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.15F, id, tableBuilder);
 //
@@ -25,7 +29,7 @@ public class ThrowableFluidsLootTableModifier {
 		});
 	}
 
-	public static void appendItemToLootTable(Identifier target, Item item, float chance, Identifier id, FabricLootTableBuilder tableBuilder) {
+	public static void appendItemToLootTable(RegistryKey<LootTable> target, Item item, float chance, LootTableSource id, RegistryWrapper.WrapperLookup tableBuilder) {
 		if (!target.equals(id)) return;
 
 		LootPool.Builder poolBuilder = LootPool.builder()
