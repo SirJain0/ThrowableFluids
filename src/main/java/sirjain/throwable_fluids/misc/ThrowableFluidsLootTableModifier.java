@@ -15,7 +15,7 @@ import sirjain.throwable_fluids.items.ThrowableFluidsItems;
 
 public class ThrowableFluidsLootTableModifier {
 	public static void initLootTables() {
-		LootTableEvents.MODIFY.register((id, tableBuilder, source) -> {
+		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
 			appendItemToLootTable(LootTables.NETHER_BRIDGE_CHEST.getRegistry(), ThrowableFluidsItems.THROWABLE_LAVA, 0.2f, id, tableBuilder);
 //			appendItemToLootTable(LootTables.STRONGHOLD_CORRIDOR_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.15f, id, tableBuilder);
 //			appendItemToLootTable(LootTables.STRONGHOLD_CROSSING_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.15F, id, tableBuilder);
