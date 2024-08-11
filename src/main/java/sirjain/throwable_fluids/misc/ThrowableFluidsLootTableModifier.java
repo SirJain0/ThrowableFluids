@@ -1,8 +1,6 @@
 package sirjain.throwable_fluids.misc;
 
-import net.fabricmc.fabric.api.loot.v3.FabricLootTableBuilder;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.fabricmc.fabric.api.loot.v3.LootTableSource;
 import net.minecraft.item.Item;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
@@ -12,32 +10,28 @@ import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.util.Identifier;
 import sirjain.throwable_fluids.items.ThrowableFluidsItems;
 
 public class ThrowableFluidsLootTableModifier {
 	public static void initLootTables() {
-		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder) -> {
-			appendItemToLootTable(LootTables.NETHER_BRIDGE_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.2f, id, tableBuilder);
-//			appendItemToLootTable(LootTables.STRONGHOLD_CORRIDOR_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.15f, id, tableBuilder);
-//			appendItemToLootTable(LootTables.STRONGHOLD_CROSSING_CHEST, ThrowableFluidsItems.THROWABLE_LAVA, 0.15F, id, tableBuilder);
-//
-//			appendItemToLootTable(LootTables.UNDERWATER_RUIN_BIG_CHEST, ThrowableFluidsItems.THROWABLE_WATER, 0.2F, id, tableBuilder);
-//			appendItemToLootTable(LootTables.UNDERWATER_RUIN_SMALL_CHEST, ThrowableFluidsItems.THROWABLE_WATER, 0.15F, id, tableBuilder);
+		LootTableEvents.MODIFY.register((key, tableBuilder, source, wrapperLookup) -> {
+			if (key == LootTables.NETHER_BRIDGE_CHEST) appendItemToLootTable(ThrowableFluidsItems.THROWABLE_LAVA, 0.2f, tableBuilder);
+			else if (key == LootTables.STRONGHOLD_CORRIDOR_CHEST) appendItemToLootTable(ThrowableFluidsItems.THROWABLE_LAVA, 0.15f, tableBuilder);
+			else if (key == LootTables.STRONGHOLD_CROSSING_CHEST) appendItemToLootTable(ThrowableFluidsItems.THROWABLE_LAVA, 0.15f, tableBuilder);
+			else if (key == LootTables.VILLAGE_PLAINS_CHEST) appendItemToLootTable(ThrowableFluidsItems.THROWABLE_LAVA, 1, tableBuilder);
+
+			if (key == LootTables.UNDERWATER_RUIN_BIG_CHEST) appendItemToLootTable(ThrowableFluidsItems.THROWABLE_LAVA, 0.2f, tableBuilder);
+			else if (key == LootTables.UNDERWATER_RUIN_SMALL_CHEST) appendItemToLootTable(ThrowableFluidsItems.THROWABLE_LAVA, 0.2f, tableBuilder);
 		});
 	}
 
-	public static void appendItemToLootTable(RegistryKey<LootTable> target, Item item, float chance, LootTableSource id, RegistryWrapper.WrapperLookup tableBuilder) {
-		if (!target.equals(id)) return;
-
-		LootPool.Builder poolBuilder = LootPool.builder()
+	public static void appendItemToLootTable(Item item, float chance, LootTable.Builder tableBuilder) {
+		LootPool.Builder poolBuilder = new LootPool.Builder()
 			.rolls(ConstantLootNumberProvider.create(1))
 			.conditionally(RandomChanceLootCondition.builder(chance))
 			.with(ItemEntry.builder(item))
 			.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
 
-		tableBuilder.pool(poolBuilder.build());
+		tableBuilder.pool(poolBuilder);
 	}
 }
